@@ -1,0 +1,679 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box; }
+
+header {
+  position: fixed;
+  top: 0px;
+  width: 100vw;
+  height: 82px; }
+  header .topMenuBkg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #464646;
+    height: 26px;
+    width: 100vw; }
+    header .topMenuBkg .topMenuContenedor {
+      display: flex;
+      justify-content: space-between;
+      width: 90vw; }
+      header .topMenuBkg .topMenuContenedor .topMenuLogo {
+        display: flex;
+        justify-content: flex-start;
+        height: 20px; }
+      header .topMenuBkg .topMenuContenedor .topMenuLinks {
+        display: flex; }
+  header .menuBkg {
+    display: flex;
+    justify-content: center;
+    background-color: #282828; }
+    header .menuBkg .menuContenedor {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+      top: 26px; }
+      header .menuBkg .menuContenedor .menuLogo {
+        display: none; }
+      header .menuBkg .menuContenedor .menuElement {
+        display: flex;
+        align-items: center;
+        color: whitesmoke;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 0.5rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        text-decoration: none;
+        margin-right: 5px; }
+      header .menuBkg .menuContenedor .menuLogin {
+        display: flex;
+        align-items: center;
+        color: whitesmoke;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 0.5rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        text-decoration: none; }
+  header .menuLogo:hover {
+    transition: 0.1s;
+    transform: scale(110%); }
+  header .menuElement:hover {
+    transition: 0.1s;
+    transform: scale(110%); }
+  header .menuLogin:hover {
+    transition: 0.1s;
+    transform: scale(110%); }
+
+main {
+  background-color: #1e1e1e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  height: 100%;
+  margin-top: 82px; }
+  main .hr1 {
+    margin-bottom: 20px; }
+  main .hr2 {
+    width: 90%; }
+  main .tituloSeccion {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem; }
+  main .bienvenidaContenedor {
+    background-image: url("../img/welcome_bkg.png");
+    background-size: cover;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: whitesmoke;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 1px 1px 5px black, -1px -1px 5px black;
+    height: 100px;
+    width: 100vw; }
+    main .bienvenidaContenedor .tituloBienvenida {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 1.5rem;
+      margin-bottom: 2px; }
+    main .bienvenidaContenedor .subtituloBienvenida {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      margin-bottom: 2px; }
+    main .bienvenidaContenedor .textoBienvenida {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 0.5rem;
+      font-weight: 500;
+      color: whitesmoke;
+      width: 400px; }
+    main .bienvenidaContenedor .racenowLogo {
+      width: 200px; }
+    main .bienvenidaContenedor .byafrt {
+      display: flex;
+      justify-content: flex-end;
+      width: 200px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-style: italic;
+      font-size: 0.5rem; }
+  main .discordContenedor {
+    display: none; }
+  main .contenedorGris {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #282828;
+    color: whitesmoke;
+    height: fit-content;
+    width: 100vw; }
+    main .contenedorGris .eventosContenedor {
+      color: whitesmoke;
+      display: grid;
+      grid-template-columns: 1;
+      grid-template-rows: 2;
+      grid-template-areas: "eventosActivos" "eventosFinalizados";
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: fit-content;
+      padding-top: 20px;
+      padding-bottom: 20px; }
+      main .contenedorGris .eventosContenedor .eventosActivos {
+        grid-area: eventosActivos;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        color: whitesmoke;
+        height: fit-content;
+        width: 90vw; }
+        main .contenedorGris .eventosContenedor .eventosActivos .evento {
+          display: flex;
+          background-image: linear-gradient(to left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)), url("../img/evento_bkg.png");
+          background-size: cover;
+          color: whitesmoke;
+          width: 90vw;
+          height: fit-content;
+          padding: 10px;
+          margin-bottom: 20px;
+          border-radius: 0px 20px 0px 20px; }
+        main .contenedorGris .eventosContenedor .eventosActivos .racenow {
+          display: flex;
+          background-image: linear-gradient(to left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)), url("../img/racenow_bkg.png");
+          background-size: cover;
+          color: whitesmoke;
+          width: 90vw;
+          height: fit-content;
+          padding: 10px;
+          margin-bottom: 20px;
+          border-radius: 0px 20px 0px 20px; }
+      main .contenedorGris .eventosContenedor .eventosFinalizados {
+        grid-area: eventosFinalizados;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        color: whitesmoke;
+        height: fit-content;
+        width: 90vw; }
+        main .contenedorGris .eventosContenedor .eventosFinalizados .evento {
+          display: flex;
+          background-image: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url("../img/evento_bkg.png");
+          background-size: cover;
+          color: whitesmoke;
+          width: 90vw;
+          height: fit-content;
+          padding: 10px;
+          margin-bottom: 20px;
+          border-radius: 0px 20px 0px 20px; }
+        main .contenedorGris .eventosContenedor .eventosFinalizados .racenow {
+          display: flex;
+          background-image: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url("../img/racenow_bkg.png");
+          background-size: cover;
+          color: whitesmoke;
+          width: 90vw;
+          height: fit-content;
+          padding: 10px;
+          margin-bottom: 20px;
+          border-radius: 0px 20px 0px 20px; }
+      main .contenedorGris .eventosContenedor .eventoLadoIzq {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-transform: uppercase;
+        width: 70%; }
+        main .contenedorGris .eventosContenedor .eventoLadoIzq .eventoTitulo {
+          font-size: 0.5rem;
+          font-style: italic;
+          font-weight: 700;
+          text-shadow: 1px 1px 5px black, -1px -1px 5px black; }
+        main .contenedorGris .eventosContenedor .eventoLadoIzq .eventoSubtitulo {
+          font-size: 0.45rem;
+          font-weight: 700;
+          margin-bottom: 5px;
+          text-shadow: 1px 1px 5px black, -1px -1px 5px black; }
+        main .contenedorGris .eventosContenedor .eventoLadoIzq .eventoLI {
+          font-size: 0.45rem;
+          list-style: none;
+          margin-bottom: 1px;
+          text-shadow: 1px 1px 5px black, -1px -1px 5px black; }
+      main .contenedorGris .eventosContenedor .eventoLadoDer {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-transform: uppercase;
+        width: 30%; }
+        main .contenedorGris .eventosContenedor .eventoLadoDer .eventoInfo {
+          display: flex;
+          background-color: white;
+          color: #1e1e1e;
+          text-decoration: none;
+          font-weight: 900;
+          font-size: 0.5rem;
+          justify-content: center;
+          align-items: center;
+          width: fit-content;
+          height: fit-content;
+          padding: 3px 6px 3px 6px;
+          border-radius: 5px; }
+        main .contenedorGris .eventosContenedor .eventoLadoDer .eventoInfo:hover {
+          transition: 1s;
+          transform: scale(110%); }
+  main .contenedorBlanco {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    color: #282828;
+    height: fit-content;
+    width: 100vw; }
+    main .contenedorBlanco .videosContenedor {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: fit-content;
+      padding-top: 20px;
+      padding-bottom: 20px; }
+      main .contenedorBlanco .videosContenedor .videosAnteriores {
+        color: #464646;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        height: fit-content;
+        width: 90vw; }
+        main .contenedorBlanco .videosContenedor .videosAnteriores .videoGaleria {
+          display: grid;
+          grid-template-columns: 1;
+          grid-template-rows: auto;
+          grid-template-areas: "videoMini1" "videoMini2" "videoMini3" "videoMini4" "videoMini5";
+          justify-content: center;
+          align-items: center;
+          height: fit-content;
+          gap: 5px; }
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: black;
+  width: 100vw;
+  height: fit-content; }
+  footer .contenedorNegro {
+    display: grid;
+    grid-template-columns: 3;
+    grid-template-rows: 3;
+    grid-template-areas: "footerLogo footerMenu footerSocial" "footerParrafo footerMenu footerSocial" "copyrights copyrights copyrights";
+    justify-content: center;
+    align-items: flex-start;
+    background-color: black;
+    color: whitesmoke;
+    height: fit-content;
+    width: 90vw; }
+    footer .contenedorNegro .footerLogo {
+      grid-area: footerLogo;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin: 10px;
+      height: 50px; }
+    footer .contenedorNegro .footerParrafo {
+      grid-area: footerParrafo;
+      color: whitesmoke;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 0.5rem;
+      margin: 10px;
+      padding-right: 10vw; }
+    footer .contenedorNegro .footerMenu {
+      grid-area: footerMenu;
+      margin: 10px; }
+    footer .contenedorNegro .footerSocial {
+      grid-area: footerSocial;
+      margin: 10px; }
+    footer .contenedorNegro .footList {
+      color: #aaaaaa;
+      list-style-type: none;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: small;
+      font-weight: 500;
+      text-transform: uppercase; }
+      footer .contenedorNegro .footList .footTitles {
+        text-transform: uppercase;
+        font-size: 0.65rem;
+        font-weight: 700;
+        margin-bottom: 20px; }
+      footer .contenedorNegro .footList .footItem {
+        display: flex;
+        align-items: center;
+        color: #aaaaaa;
+        font-size: 0.5rem;
+        column-gap: 5px;
+        margin-bottom: 5px; }
+      footer .contenedorNegro .footList .footLink {
+        text-decoration: none;
+        color: #aaaaaa; }
+    footer .contenedorNegro .copyrights {
+      grid-area: copyrights;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      height: fit-content;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: whitesmoke;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 0.65rem;
+      font-weight: 400; }
+
+.fa-brands {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #828282;
+  color: #464646;
+  border-radius: 20px;
+  height: 20px;
+  width: 20px;
+  margin-right: 5px; }
+
+.fa-brands:hover {
+  transition: 0.1s;
+  transform: scale(110%); }
+
+.fa-brands.fa-discord.fa-xl {
+  display: none;
+  color: white;
+  background-color: #aaaaaa;
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  border-radius: 10px;
+  bottom: 40px;
+  right: 40px;
+  justify-content: center;
+  align-items: center; }
+
+@media screen and (max-width: 400px) {
+  .textoBienvenida {
+    display: none; } }
+
+@media screen and (min-width: 576px) {
+  header {
+    height: 90px; }
+    header .menuBkg .menuContenedor {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 58px;
+      top: 32px;
+      width: 90vw; }
+      header .menuBkg .menuContenedor .menuLogo {
+        display: none;
+        justify-content: flex-start;
+        height: 30px;
+        width: 80px; }
+      header .menuBkg .menuContenedor .menuElement {
+        font-size: 0.75rem;
+        font-weight: 600;
+        margin: 5px; }
+      header .menuBkg .menuContenedor .menuLogin {
+        font-size: 0.75rem;
+        font-weight: 600;
+        margin: 5px; }
+    header .topMenuBkg {
+      height: 32px; }
+      header .topMenuBkg .topMenuContenedor {
+        display: flex;
+        justify-content: space-between;
+        width: 90vw; }
+        header .topMenuBkg .topMenuContenedor .topMenuLogo {
+          display: flex;
+          justify-content: flex-start;
+          height: 20px; }
+  main {
+    width: 100vw;
+    height: 100%;
+    margin-top: 90px; }
+    main .hr1 {
+      margin-bottom: 10px; }
+    main .discordContenedor {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 30px; }
+      main .discordContenedor .discord {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1000px;
+        height: 100%; }
+        main .discordContenedor .discord .discordTexto {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          color: whitesmoke;
+          display: flex;
+          font-size: 1.5rem;
+          font-weight: 600;
+          font-style: oblique;
+          margin-right: 100px; }
+        main .discordContenedor .discord .discordBoton {
+          display: flex;
+          background-image: url("../img/discord.png");
+          background-repeat: no-repeat;
+          background-size: 50px;
+          background-position: 50%;
+          background-color: #464646;
+          color: whitesmoke;
+          height: 70px;
+          width: 70px;
+          border-radius: 20px; }
+        main .discordContenedor .discord .discordBoton:hover {
+          transition: 1s;
+          transform: scale(110%); }
+    main .bienvenidaContenedor {
+      height: 200px;
+      padding: 10px; }
+      main .bienvenidaContenedor .tituloBienvenida {
+        font-size: 2rem;
+        margin-bottom: 10px; }
+      main .bienvenidaContenedor .subtituloBienvenida {
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 10px; }
+      main .bienvenidaContenedor .textoBienvenida {
+        font-size: 0.65rem;
+        width: 520px; }
+    main .contenedorGris .eventoLadoIzq .eventoTitulo {
+      font-size: 1rem; }
+    main .contenedorGris .eventoLadoIzq .eventoSubtitulo {
+      font-size: 0.65rem; }
+    main .contenedorGris .eventoLadoIzq .eventoLI {
+      font-size: 0.65rem; }
+    main .contenedorGris .eventoLadoDer .eventoInfo {
+      font-size: 0.65rem;
+      padding: 6px 12px 6px 12px; }
+    main .contenedorBlanco .videoGaleria {
+      grid-template-columns: 2;
+      grid-template-rows: 3;
+      grid-template-areas: "videoMini1 videoMini2" "videoMini3 videoMini4" "videoMini5 videoMini5"; }
+  footer .contenedorNegro {
+    width: 90vw;
+    grid-template-columns: 1.5fr 0.5fr 0.5fr; }
+    footer .contenedorNegro .footerLogo {
+      display: flex;
+      margin: 10px;
+      height: 60px; }
+    footer .contenedorNegro .footerParrafo {
+      font-size: 0.65rem;
+      padding-left: 10px;
+      padding-right: 10vw; }
+    footer .contenedorNegro .footList .footTitles {
+      font-size: 1rem; }
+      footer .contenedorNegro .footList .footTitles .footItem {
+        font-size: 0.65rem;
+        margin-bottom: 10px;
+        column-gap: 10px; }
+    footer .contenedorNegro .copyrights {
+      margin-top: 30px;
+      margin-bottom: 15px;
+      font-size: 0.75rem; }
+  .fa-brands {
+    border-radius: 25px;
+    height: 25px;
+    width: 25px; } }
+
+@media screen and (min-width: 1000px) {
+  header {
+    height: 114px; }
+    header .topMenuBkg {
+      height: 38px; }
+      header .topMenuBkg .topMenuContenedor {
+        display: flex;
+        justify-content: flex-end;
+        width: 1000px; }
+        header .topMenuBkg .topMenuContenedor .topMenuLogo {
+          display: none; }
+    header .menuBkg .menuContenedor {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 76px;
+      top: 38px;
+      width: 1000px; }
+      header .menuBkg .menuContenedor .menuLogo {
+        display: flex;
+        justify-content: flex-start;
+        height: 30px;
+        width: 80px;
+        margin-right: 5px; }
+      header .menuBkg .menuContenedor .menuElement {
+        font-size: 1rem;
+        font-weight: 600;
+        margin: 5px; }
+      header .menuBkg .menuContenedor .menuLogin {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-left: 80px; }
+  main {
+    margin-top: 114px; }
+    main .hr1 {
+      margin-bottom: 20px; }
+    main .hr2 {
+      width: 90%;
+      margin-top: 5px;
+      margin-bottom: 5px; }
+    main .bienvenidaContenedor {
+      height: 300px;
+      padding: 50px; }
+      main .bienvenidaContenedor .tituloBienvenida {
+        font-size: 2.5rem;
+        margin-bottom: 30px; }
+      main .bienvenidaContenedor .subtituloBienvenida {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 30px; }
+      main .bienvenidaContenedor .textoBienvenida {
+        font-size: 0.75rem;
+        width: 600px; }
+      main .bienvenidaContenedor .racenowLogo {
+        width: 600px; }
+      main .bienvenidaContenedor .byafrt {
+        width: 600px;
+        font-size: 1.5rem; }
+    main .discordContenedor {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 30px; }
+      main .discordContenedor .discord {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1000px;
+        height: 100%; }
+        main .discordContenedor .discord .discordTexto {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          color: whitesmoke;
+          display: flex;
+          font-size: 2rem;
+          font-weight: 600;
+          font-style: oblique;
+          margin-right: 100px; }
+        main .discordContenedor .discord .discordBoton {
+          display: flex;
+          background-image: url("../img/discord.png");
+          background-repeat: no-repeat;
+          background-size: 60px;
+          background-position: 50%;
+          background-color: #464646;
+          color: whitesmoke;
+          height: 90px;
+          width: 90px;
+          border-radius: 20px; }
+        main .discordContenedor .discord .discordBoton:hover {
+          transition: 1s;
+          transform: scale(110%); }
+    main .seccionHeader {
+      padding: 50px;
+      font-size: 1.5rem; }
+    main .contenedorGris .eventosContenedor {
+      grid-template-columns: 2;
+      grid-template-rows: 1;
+      grid-template-areas: "eventosActivos eventosFinalizados";
+      justify-content: center;
+      align-items: center;
+      width: 1000px;
+      height: fit-content;
+      gap: 40px; }
+      main .contenedorGris .eventosContenedor .eventosActivos {
+        width: 480px; }
+        main .contenedorGris .eventosContenedor .eventosActivos .evento {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 20px; }
+        main .contenedorGris .eventosContenedor .eventosActivos .racenow {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 20px; }
+      main .contenedorGris .eventosContenedor .eventosFinalizados {
+        width: 480px; }
+        main .contenedorGris .eventosContenedor .eventosFinalizados .evento {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 20px; }
+        main .contenedorGris .eventosContenedor .eventosFinalizados .racenow {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 20px; }
+      main .contenedorGris .eventosContenedor .eventoLadoIzq .eventoTitulo {
+        font-size: 1rem; }
+      main .contenedorGris .eventosContenedor .eventoLadoIzq .eventoSubtitulo {
+        font-size: 0.75rem;
+        margin-bottom: 10px; }
+      main .contenedorGris .eventosContenedor .eventoLadoIzq .eventoLI {
+        font-size: 0.75rem; }
+      main .contenedorGris .eventosContenedor .eventoLadoDer .eventoInfo {
+        font-size: 0.75rem;
+        padding: 5px 10px 5px 10px; }
+    main .contenedorBlanco .videosContenedor {
+      width: 1000px; }
+      main .contenedorBlanco .videosContenedor .videosAnteriores {
+        width: 1000px; }
+        main .contenedorBlanco .videosContenedor .videosAnteriores .videoGaleria {
+          grid-template-columns: 5;
+          grid-template-rows: 1;
+          grid-template-areas: "videoMini1 videoMini2 videoMini3 videoMini4 videoMini5 videoMini5";
+          width: 1000px; }
+    main .tituloSeccion {
+      font-size: 1.5rem; }
+  footer .contenedorNegro {
+    width: 1000px; }
+    footer .contenedorNegro .footerLogo {
+      height: 80px; }
+    footer .contenedorNegro .footerParrafo {
+      font-size: 0.75rem;
+      padding-right: 10vw; }
+    footer .contenedorNegro .footList .footTitles {
+      font-size: 1rem; }
+    footer .contenedorNegro .footList .footItem {
+      font-size: 0.75rem;
+      margin-bottom: 15px;
+      column-gap: 15px; }
+    footer .contenedorNegro .copyrights {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      font-size: 1rem; }
+  .fa-brands {
+    border-radius: 25px;
+    height: 25px;
+    width: 25px; }
+  .fa-brands.fa-discord.fa-xl {
+    display: flex; } }

@@ -1,0 +1,839 @@
+@import "utilities/variables";
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+header{
+  position: fixed;
+  top: 0px;
+  width: 100vw;
+  height: 82px;
+  .topMenuBkg{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $color-gris2;
+      height: 26px;
+      width: 100vw;
+      .topMenuContenedor{
+          display: flex;
+          justify-content: space-between;
+          width: 90vw;
+          .topMenuLogo{
+              display: flex;
+              justify-content: flex-start;
+              height: 20px;
+          }
+          .topMenuLinks{
+              display: flex;
+          }
+      }
+    }
+    .menuBkg{
+        display: flex;
+        justify-content: center;
+        background-color: $color-gris1;
+        .menuContenedor{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+            top: 26px;
+            .menuLogo{
+                display: none;
+            }
+            .menuElement{
+                display: flex;
+                align-items: center;
+                color: $color-blanco1;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 0.5rem;
+                font-weight: 500;
+                text-transform: uppercase;
+                text-decoration: none;
+                margin-right: 5px;
+            }
+            .menuLogin{
+                display: flex;
+                align-items: center;
+                color: $color-blanco1;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 0.5rem;
+                font-weight: 500;
+                text-transform: uppercase;
+                text-decoration: none;
+            }
+        }
+    }
+    .menuLogo:hover{
+        transition: $transition-duration0;
+        transform: scale($hover-tranformation-scale);
+    }
+    .menuElement:hover{
+        transition: $transition-duration0;
+        transform: scale($hover-tranformation-scale);
+    }
+    .menuLogin:hover{
+        transition: $transition-duration0;
+        transform: scale($hover-tranformation-scale);
+    }
+}
+main{
+    background-color: $color-gris0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    height: 100%;
+    margin-top: 82px;
+    .hr1{
+        margin-bottom: 20px;
+    }
+    .hr2{
+        width: 90%;
+    }
+    .tituloSeccion{
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1rem;
+    }
+    .bienvenidaContenedor{
+        background-image: url('../img/welcome_bkg.png');
+        background-size: cover;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: $color-blanco1;
+        text-transform: uppercase;
+        text-align: center;
+        text-shadow: 1px 1px 5px $color-black0, -1px -1px 5px $color-black0;
+        height: 100px;
+        width: 100vw;
+        .tituloBienvenida{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 2px;
+        }
+        .subtituloBienvenida{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+        .textoBienvenida{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 0.5rem;
+            font-weight: 500;
+            color: $color-blanco1;
+            width: 400px;
+        }
+        .racenowLogo{
+            width: 200px;
+        }
+        .byafrt{
+            display: flex;
+            justify-content: flex-end;
+            width: 200px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-style: italic;
+            font-size: 0.5rem;
+        }
+    }
+    .discordContenedor{
+        display: none;
+    }
+    .contenedorGris{
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $color-gris1;
+        color: $color-blanco1;
+        height: fit-content;
+        width: 100vw;
+        .eventosContenedor{
+            color: $color-blanco1;
+            display: grid;
+            grid-template-columns: 1;
+            grid-template-rows: 2;
+            grid-template-areas: "eventosActivos" "eventosFinalizados";
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: fit-content;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            .eventosActivos{
+                grid-area: eventosActivos;
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                color: $color-blanco1;
+                height: fit-content;
+                width: 90vw;
+                .evento{
+                    display: flex;
+                    background-image: linear-gradient(to left, $gradiente-activo-1,$gradiente-activo-2,$gradiente-activo-1), url('../img/evento_bkg.png');
+                    background-size: cover;
+                    color: $color-blanco1;
+                    width: 90vw;
+                    height: fit-content;
+                    padding: 10px;
+                    margin-bottom: 20px;
+                    border-radius: 0px 20px 0px 20px;
+                }
+                .racenow{
+                    display: flex;
+                    background-image: linear-gradient(to left, $gradiente-activo-1,$gradiente-activo-2,$gradiente-activo-1), url('../img/racenow_bkg.png');
+                    background-size: cover;
+                    color: whitesmoke;
+                    width: 90vw;
+                    height: fit-content;
+                    padding: 10px;
+                    margin-bottom: 20px;
+                    border-radius: 0px 20px 0px 20px;
+                }
+            }
+            .eventosFinalizados{
+                grid-area: eventosFinalizados;
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                color: $color-blanco1;
+                height: fit-content;
+                width: 90vw;
+                .evento{
+                    display: flex;
+                    background-image: linear-gradient(to left, $gradiente-finalizado-1,$gradiente-finalizado-2,$gradiente-finalizado-1), url('../img/evento_bkg.png');
+                    background-size: cover;
+                    color: $color-blanco1;
+                    width: 90vw;
+                    height: fit-content;
+                    padding: 10px;
+                    margin-bottom: 20px;
+                    border-radius: 0px 20px 0px 20px;
+                }
+                .racenow{
+                    display: flex;
+                    background-image: linear-gradient(to left, $gradiente-finalizado-1,$gradiente-finalizado-2,$gradiente-finalizado-1), url('../img/racenow_bkg.png');
+                    background-size: cover;
+                    color: $color-blanco1;
+                    width: 90vw;
+                    height: fit-content;
+                    padding: 10px;
+                    margin-bottom: 20px;
+                    border-radius: 0px 20px 0px 20px;
+                }
+            }
+            .eventoLadoIzq{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                text-transform: uppercase;
+                width: 70%;
+                .eventoTitulo{
+                    font-size: 0.5rem;
+                    font-style: italic;
+                    font-weight: 700;
+                    text-shadow: 1px 1px 5px black, -1px -1px 5px black;
+                }
+                .eventoSubtitulo{
+                    font-size: 0.45rem;
+                    font-weight: 700;
+                    margin-bottom: 5px;
+                    text-shadow: 1px 1px 5px black, -1px -1px 5px black;
+                }
+                .eventoLI{
+                    font-size: 0.45rem;
+                    list-style: none;
+                    margin-bottom: 1px;
+                    text-shadow: 1px 1px 5px black, -1px -1px 5px black;
+                }
+            }
+            .eventoLadoDer{
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                text-transform: uppercase;
+                width: 30%;
+                .eventoInfo{
+                    display: flex;
+                    background-color: $color-blanco0;
+                    color: $color-gris0;
+                    text-decoration: none;
+                    font-weight: 900;
+                    font-size: 0.5rem;
+                    justify-content: center;
+                    align-items: center;
+                    width: fit-content;
+                    height: fit-content;
+                    padding: 3px 6px 3px 6px;
+                    border-radius: 5px;
+                }
+                .eventoInfo:hover{
+                    transition: 1s;
+                    transform: scale($hover-tranformation-scale);
+                }
+            }
+        }
+    }
+    .contenedorBlanco{
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $color-blanco1;
+        color: $color-gris1;
+        height: fit-content;
+        width: 100vw;
+        .videosContenedor{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: fit-content;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            .videosAnteriores{
+                color: $color-gris2;
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                height: fit-content;
+                width: 90vw;
+                .videoGaleria{
+                    display: grid;
+                    grid-template-columns: 1;
+                    grid-template-rows: auto;
+                    grid-template-areas: "videoMini1" "videoMini2" "videoMini3" "videoMini4" "videoMini5";
+                    justify-content: center;
+                    align-items: center;
+                    height: fit-content;
+                    gap: 5px;
+                }
+            }
+        }
+    }
+}
+footer{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: $color-black0;
+    width: 100vw;
+    height: fit-content;
+    .contenedorNegro{
+        display: grid;
+        grid-template-columns: 3;
+        grid-template-rows: 3;
+        grid-template-areas: "footerLogo footerMenu footerSocial" "footerParrafo footerMenu footerSocial" "copyrights copyrights copyrights";
+        justify-content: center;
+        align-items: flex-start;
+        background-color: $color-black0;
+        color: $color-blanco1;
+        height: fit-content;
+        width: 90vw;
+        .footerLogo{
+            grid-area: footerLogo;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin: 10px;
+            height: 50px;
+        }
+        .footerParrafo{
+            grid-area: footerParrafo;
+            color: $color-blanco1;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 0.5rem;
+            margin: 10px;
+            padding-right: 10vw;
+        }
+        .footerMenu{
+            grid-area: footerMenu;
+            margin: 10px;
+        }
+        .footerSocial{
+            grid-area: footerSocial;
+            margin: 10px;
+        }
+        .footList{
+            color: $color-gris4;
+            list-style-type: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: small;
+            font-weight: 500;
+            text-transform: uppercase;
+            .footTitles{
+                text-transform: uppercase;
+                font-size: 0.65rem;
+                font-weight: 700;
+                margin-bottom: 20px;
+            }
+            .footItem{
+                display: flex;
+                align-items: center;
+                color: $color-gris4;
+                font-size: 0.5rem;
+                column-gap: 5px;
+                margin-bottom: 5px;
+            }
+            .footLink{
+                text-decoration: none;
+                color: $color-gris4;
+            }
+        }
+        .copyrights{
+            grid-area: copyrights;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: fit-content;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: $color-blanco1;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 0.65rem;
+            font-weight: 400;
+        }
+    }
+}
+.fa-brands{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-gris3;
+    color:  $color-gris2;
+    border-radius: 20px;
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+}
+.fa-brands:hover{
+    transition: $transition-duration0;
+    transform: scale($hover-tranformation-scale);
+}
+.fa-brands.fa-discord.fa-xl{
+    display: none;
+    color: $color-blanco0;
+    background-color:  $color-gris4;
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+    bottom: 40px;
+    right: 40px;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width:400px){
+    .textoBienvenida{
+        display: none;
+    }
+}
+@media screen and (min-width:576px){
+    header{
+        height: 90px;
+        .menuBkg{
+            .menuContenedor{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 58px;
+                top: 32px;
+                width: 90vw;
+                .menuLogo{
+                    display: none;
+                    justify-content: flex-start;
+                    height: 30px;
+                    width: 80px;
+                }
+                .menuElement{
+                    font-size: 0.75rem;
+                    font-weight: 600;
+                    margin: 5px;
+                }
+                .menuLogin{
+                    font-size: 0.75rem;
+                    font-weight: 600;
+                    margin: 5px;
+                }
+            }
+        }
+        .topMenuBkg{
+            height: 32px;
+            .topMenuContenedor{
+                display: flex;
+                justify-content: space-between;
+                width: 90vw;
+                .topMenuLogo{
+                    display: flex;
+                    justify-content: flex-start;
+                    height: 20px;
+                }
+            }
+        }
+    
+    }
+    main{
+        width: 100vw;
+        height: 100%;
+        margin-top: 90px;
+        .hr1{
+            margin-bottom: 10px;
+        }
+        .discordContenedor{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 30px;
+            .discord{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 1000px;
+                height: 100%;
+                .discordTexto{
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    color: $color-blanco1;
+                    display: flex;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    font-style: oblique;
+                    margin-right: 100px;
+                }
+                .discordBoton{
+                    display: flex;
+                    background-image: url('../img/discord.png');
+                    background-repeat: no-repeat;
+                    background-size: 50px;
+                    background-position: 50%;
+                    background-color: $color-gris2;
+                    color: $color-blanco1;
+                    height: 70px;
+                    width: 70px;
+                    border-radius: 20px;
+                }
+                .discordBoton:hover{
+                    transition: $transition-duration1;
+                    transform: scale($hover-tranformation-scale);
+                }
+            }
+        }
+        .bienvenidaContenedor{
+            height: 200px;
+            padding: 10px;
+            .tituloBienvenida{
+                font-size: 2rem;
+                margin-bottom: 10px;
+            }
+            .subtituloBienvenida{
+                font-size: 1rem;
+                font-weight: 500;
+                margin-bottom: 10px;
+            }
+            .textoBienvenida{
+                font-size: 0.65rem;
+                width: 520px;
+            }
+        }
+        .contenedorGris{
+            .eventoLadoIzq{
+                .eventoTitulo{
+                    font-size: 1rem;
+                }
+                .eventoSubtitulo{
+                    font-size: 0.65rem;
+                }
+                .eventoLI{
+                    font-size: 0.65rem;
+                }
+            }
+            .eventoLadoDer{
+                .eventoInfo{
+                    font-size: 0.65rem;
+                    padding: 6px 12px 6px 12px;
+                }
+            }
+        }
+        .contenedorBlanco{
+            .videoGaleria{
+                grid-template-columns: 2;
+                grid-template-rows: 3;
+                grid-template-areas: "videoMini1 videoMini2" "videoMini3 videoMini4" "videoMini5 videoMini5";
+            }
+        }
+    }
+    footer{
+        .contenedorNegro{
+            width: 90vw;
+            grid-template-columns: 1.5fr 0.5fr 0.5fr;
+            .footerLogo{
+                display: flex;
+                margin: 10px;
+                height: 60px;
+            }
+            .footerParrafo{
+                font-size: 0.65rem;
+                padding-left: 10px;
+                padding-right: 10vw;
+            }
+            .footList{
+                .footTitles{
+                    font-size: 1rem;
+                    .footItem{
+                        font-size: 0.65rem;
+                        margin-bottom: 10px;
+                        column-gap: 10px;
+                    }
+                }
+            }
+            .copyrights{
+                margin-top: 30px;
+                margin-bottom: 15px;
+                font-size: 0.75rem;
+            }
+        }
+    }
+    .fa-brands{
+        border-radius: 25px;
+        height: 25px;
+        width: 25px;
+    }
+}
+@media screen and (min-width:1000px) {
+    header{
+        height: 114px;
+        .topMenuBkg{
+            height: 38px;
+            .topMenuContenedor{
+                display: flex;
+                justify-content: flex-end;
+                width: 1000px;
+                .topMenuLogo{
+                    display: none;
+                }
+            }
+        }
+        .menuBkg{
+            .menuContenedor{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 76px;
+                top: 38px;
+                width: 1000px;
+                .menuLogo{
+                    display: flex;
+                    justify-content: flex-start;
+                    height: 30px;
+                    width: 80px;
+                    margin-right: 5px;
+                }
+                .menuElement{
+                    font-size: 1rem;
+                    font-weight: 600;
+                    margin: 5px;
+                }
+                .menuLogin{
+                    font-size: 1rem;
+                    font-weight: 600;
+                    margin-left: 80px;
+                }
+            }
+        }
+    }
+    main{
+         margin-top: 114px;
+            .hr1{
+                margin-bottom: 20px;
+            }
+            .hr2{
+                width: 90%;
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+            .bienvenidaContenedor{
+                height: 300px;
+                padding: 50px;
+                .tituloBienvenida{
+                    font-size: 2.5rem;
+                    margin-bottom: 30px;
+                }
+                .subtituloBienvenida{
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                    margin-bottom: 30px;
+                }
+                .textoBienvenida{
+                    font-size: 0.75rem;
+                    width: 600px;
+                }
+                .racenowLogo{
+                    width: 600px;
+                }
+                .byafrt{
+                    width: 600px;
+                    font-size: 1.5rem;
+                }
+            }
+            .discordContenedor{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                padding: 30px;
+                .discord{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 1000px;
+                    height: 100%;
+                    .discordTexto{
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        color: $color-blanco1;
+                        display: flex;
+                        font-size: 2rem;
+                        font-weight: 600;
+                        font-style: oblique;
+                        margin-right: 100px;
+                    }
+                    .discordBoton{
+                        display: flex;
+                        background-image: url('../img/discord.png');
+                        background-repeat: no-repeat;
+                        background-size: 60px;
+                        background-position: 50%;
+                        background-color: $color-gris2;
+                        color: $color-blanco1;
+                        height: 90px;
+                        width: 90px;
+                        border-radius: 20px;
+                    }
+                    .discordBoton:hover{
+                        transition: $transition-duration1;
+                        transform: scale($hover-tranformation-scale);
+                    }
+                }
+            }
+            .seccionHeader{
+                padding: 50px;
+                font-size: 1.5rem;
+            }
+            .contenedorGris{
+                .eventosContenedor{
+                    grid-template-columns: 2;
+                    grid-template-rows: 1;
+                    grid-template-areas: "eventosActivos eventosFinalizados";
+                    justify-content: center;
+                    align-items: center;
+                    width: 1000px;
+                    height: fit-content;
+                    gap: 40px;
+                    .eventosActivos{
+                        width: 480px;
+                        .evento{
+                            width: 100%;
+                            padding: 10px;
+                            margin-bottom: 20px;
+                        }
+                        .racenow{
+                            width: 100%;
+                            padding: 10px;
+                            margin-bottom: 20px;
+                        }
+                    }
+                    .eventosFinalizados{
+                        width: 480px;
+                        .evento{
+                            width: 100%;
+                            padding: 10px;
+                            margin-bottom: 20px;
+                        }
+                        .racenow{
+                            width: 100%;
+                            padding: 10px;
+                            margin-bottom: 20px;
+                        }
+                    }
+                    .eventoLadoIzq{
+                        .eventoTitulo{
+                            font-size: 1rem;
+                        }
+                        .eventoSubtitulo{
+                            font-size: 0.75rem;
+                            margin-bottom: 10px;
+                        }
+                        .eventoLI{
+                            font-size: 0.75rem;
+                        }
+                    }
+                    .eventoLadoDer{
+                        .eventoInfo{
+                            font-size: 0.75rem;
+                            padding: 5px 10px 5px 10px;
+                        }
+                    }
+                }
+            }
+            .contenedorBlanco{
+                .videosContenedor{
+                    width: 1000px;
+                    .videosAnteriores{
+                        width: 1000px;
+                        .videoGaleria{
+                            grid-template-columns: 5;
+                            grid-template-rows: 1;
+                            grid-template-areas: "videoMini1 videoMini2 videoMini3 videoMini4 videoMini5 videoMini5";
+                            width: 1000px;
+                        }
+                    }
+                }
+            }
+            .tituloSeccion{
+                font-size: 1.5rem;
+            }
+        }
+    footer{
+        .contenedorNegro{
+            width: 1000px;
+            .footerLogo{
+                height: 80px;
+            }
+            .footerParrafo{
+                font-size: 0.75rem;
+                padding-right: 10vw;
+            }
+            .footList{
+                .footTitles{
+                    font-size: 1rem;
+                }
+                .footItem{
+                    font-size: 0.75rem;
+                    margin-bottom: 15px;
+                    column-gap: 15px;
+                }
+            }
+            .copyrights{
+                margin-top: 40px;
+                margin-bottom: 20px;
+                font-size: 1rem;
+            }
+        }
+    }
+    .fa-brands{
+        border-radius: 25px;
+        height: 25px;
+        width: 25px;
+    }
+    .fa-brands.fa-discord.fa-xl{
+        display: flex;
+    }
+}

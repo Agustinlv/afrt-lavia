@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/stylesheet.css">
+    <script src="https://kit.fontawesome.com/a57f1acd56.js" crossorigin="anonymous"></script>
+    <title>LOGIN</title>
+</head>
+<body>
+    <header>
+        <div class="divTopMenu">
+            <div class="topMenuContenedor">
+                <div>
+                    <a class="topLogo" href="../index.html"><img src="../img/logo_afrt_blanco.png" alt="logo_afrt_blanco"></a>
+                </div>
+                <div class="topMenu">
+                    <i class="fa-brands fa-discord fa-sm"></i>
+                    <i class="fa-brands fa-instagram fa-sm"></i>
+                    <i class="fa-brands fa-twitter fa-sm"></i>
+                    <i class="fa-brands fa-youtube fa-sm"></i>
+                </div>
+            </div>
+        </div>
+        <div class="divMenuPrincipal">
+                    <ul class="menuList">
+                        <li><a id="menuLogo" href="../index.html"><img src="../img/logo_afrt_blanco.png" alt="logo_afrt_blanco"></a></li>
+                        <li><a class="menuElement" href="../pages/campeonatos.html">campeonatos</a></li>
+                        <li><a class="menuElement" href="../pages/reglamento.html">reglamento</a></li>
+                        <li><a class="menuElement" href="../pages/racenow.html">racenow</a></li>
+                        <li><a class="menuElement" href="../pages/afrttv.html">afrt tv</a></li>
+                        <li><a id="menuLogin" href="../pages/login.html">login/contacto</a></li>
+                    </ul>
+        </div>
+    </header>
+    <main>
+        <div class="seccionHeader">
+            <h1>login / contacto</h1>
+        </div>
+        <div class="divGris">
+            <div class="divLogin">
+                <h2 class="tituloSeccion">login</h2>
+                <hr class="hr1">
+                <form class="loginForm">
+                    <div class="loginUser">
+                        <label class="loginLabel" for="nombreUsuario">usuario</label>
+                        <input class="loginCaja" type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Ingresa tu nombre completo">
+                    </div>
+                    <div class="loginPass">
+                        <label class="loginLabel" for="clave">clave</label>
+                        <input class="loginCaja" type="text" name="clave" id="clave" placeholder="Ingresa tu apellido">
+                    </div>
+                    <div class="loginAction">
+                        <input class="loginBoton" type="submit" value="Login">
+                        <a class="claveReset" href="">Olvidaste la contraseña?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="divBlanco">
+            <div class="divContacto">
+                <h2 class="tituloSeccion">contacto</h2>
+                <hr class="hr1">
+                <form class="contactoForm">
+                    <div class="contactoNombre">
+                        <label class="contactoLabel" for="nombre">Nombre</label>
+                        <input class="contactoCaja"  type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre completo">
+                    </div>
+                    <div class="contactoApellido">
+                        <label class="contactoLabel"  for="apellido">Apellido</label>
+                        <input class="contactoCaja"  type="text" name="apellido" id="apellido" placeholder="Ingresa tu apellido">
+                    </div>
+                    <div class="contactoEmail">
+                        <label class="contactoLabel"  for="email">E-Mail</label>
+                        <input class="contactoCaja"  type="email" name="email" id="email" placeholder="Ingresa tu dirección de e-mail">
+                    </div>
+                    <div class="contactoPais">
+                        <label class="contactoLabel"  for="pais">Pais de Residencia</label>
+                        <select class="contactoCaja"  name="pais" id="pais">
+                            <option value="1">Argentina</option>
+                            <option value="2">Uruguay</option>
+                            <option value="3">Chile</option>
+                            <option value="4">Brasil</option>
+                            <option value="5">Mexico</option>
+                        </select>
+                    </div>
+                    <div class="contactoComentario">
+                        <label class="contactoLabel"  for="comentario">comentario</label>
+                        <input class="comentarioCaja"  type="comentario" name="comentario" id="comentario" placeholder="Dejanos tu comentario">
+                    </div>
+                    <div class="contactoBoton">
+                        <input class="loginBoton" type="submit" value="Enviar">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <i class="fa-brands fa-discord fa-xl"></i>
+        </div>
+        <div class="divNegro">
+            <div class="footerLogo">
+                <a href=""><img id="footLogo" src="../img/logo_afrt_blanco.png" alt="logo afrt blanco"></a>
+            </div>
+            <div class="footerParrafo">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates, modi similique temporibus vitae ratione explicabo officia minima enim magnam inventore cupiditate reiciendis, accusamus distinctio! Porro ullam tempora optio aperiam molestias.</p>
+            </div>
+            <div class="footerMenu">
+                <ul class="footList">
+                    <li id="footTitles">menu</li>
+                    <li class="footItem"><a class="footLink" href="">inicio</a></li>
+                    <li class="footItem"><a class="footLink" href="">eventos</a></li>
+                    <li class="footItem"><a class="footLink" href="">leaderboard</a></li>
+                    <li class="footItem"><a class="footLink" href="">racenow</a></li>
+                    <li class="footItem"><a class="footLink" href="">contacto</a></li>
+                    <li class="footItem"><a class="footLink" href="">login</a></li>
+                </ul>
+            </div>
+            <div class="footerSocial">
+                <ul class="footList">
+                    <li id="footTitles">redes sociales</li>
+                    <li class="footItem">discord<i class="fa-brands fa-discord fa-sm"></i></li>
+                    <li class="footItem">instagram<i class="fa-brands fa-instagram fa-sm"></i></li>
+                    <li class="footItem">twitter<i class="fa-brands fa-twitter fa-sm"></i></li>
+                    <li class="footItem">youtube<i class="fa-brands fa-youtube fa-sm"></i></li>
+                </ul>
+            </div>
+            <div class="copyrights">
+                <h4>A FONDO RACING TEAM es una marca registrada de AFRT LTD.</h4>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
