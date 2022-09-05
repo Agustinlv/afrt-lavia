@@ -1,0 +1,57 @@
+@import "utilities/variables";
+@import "utilities/mapas";
+@import "utilities/listas";
+
+@mixin dimensiones ($width, $height) {
+    width: $width;
+    height: $height;
+}
+@mixin flex-justify-center{
+    display: flex;
+    justify-content: center;
+}
+@mixin flex-justify-align-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flex-column-align-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@mixin flex-column-justify-align-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flex-space-between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin flex-flex-start{
+    display: flex;
+    justify-content: flex-start;
+}
+@mixin flex-flex-start-align-center{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+@mixin flex-flex-end{
+    display: flex;
+    justify-content: flex-end;
+}
+@mixin flex-flex-end-align-center{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+@mixin textos($font-size,$font-weight){
+    text-transform: uppercase;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: $font-size;
+    font-weight: $font-weight;
+}

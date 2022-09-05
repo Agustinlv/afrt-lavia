@@ -14,3 +14,7 @@ $gradiente-finalizado-1:rgba(0,0,0,0.8);
 $gradiente-finalizado-2:rgba(0,0,0,0.6);
 $transition-duration0: 0.1s;
 $transition-duration1: 1s;
+$evento-bg-i: linear-gradient(to left, $gradiente-activo-1,$gradiente-activo-2,$gradiente-activo-1), url('../img/evento_bkg.png');
+$racenow-bg-i: linear-gradient(to left, $gradiente-activo-1,$gradiente-activo-2,$gradiente-activo-1), url('../img/racenow_bkg.png');
+$eventoFinalizado-bg-i: linear-gradient(to left, $gradiente-finalizado-1,$gradiente-finalizado-2,$gradiente-finalizado-1), url('../img/evento_bkg.png');
+$racenowFinalizado-bg-i: linear-gradient(to left, $gradiente-finalizado-1,$gradiente-finalizado-2,$gradiente-finalizado-1), url('../img/racenow_bkg.png');

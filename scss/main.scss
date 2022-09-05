@@ -1,45 +1,69 @@
 @import "utilities/variables";
+@import "utilities/mapas";
+@import "utilities/listas";
+@import "utilities/mixins";
+
 *{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 header{
-  position: fixed;
-  top: 0px;
-  width: 100vw;
-  height: 82px;
-  .topMenuBkg{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: $color-gris2;
-      height: 26px;
-      width: 100vw;
-      .topMenuContenedor{
-          display: flex;
-          justify-content: space-between;
-          width: 90vw;
-          .topMenuLogo{
-              display: flex;
-              justify-content: flex-start;
-              height: 20px;
-          }
-          .topMenuLinks{
-              display: flex;
-          }
-      }
+    .menuBkg{
+        @include flex-justify-align-center;
+        @include dimensiones(100vw,fit-content);
+        background-color: nth($list: $paleta-principal, $n: 3);
+        .menuContenedor{
+            @include flex-space-between;
+            @include dimensiones(90vw,25px);
+            .menuLogo{
+                @include flex-flex-start;
+                height: 20px;
+            }
+            .menuLinks{
+                display: flex;
+                .menuElement{
+                    @include dimensiones(20px,20px);
+                    @include flex-justify-align-center;
+                    background-color: nth($list: $paleta-principal, $n: 4);
+                    border-radius: 20px;
+                    margin-left: 5px;
+                    padding: 5px;
+                }
+                .menuElement:hover{
+                    transition: $transition-duration0;
+                    transform: scale($hover-tranformation-scale);
+                }
+            }
+        }
+    }
+}
+main{
+    @include flex-column-justify-align-center;
+    @include dimensiones(100vw,fit-content);
+    background-color: $color-gris0;
+    .hr1{
+        margin-bottom: 20px;
+    }
+    .hr2{
+        width: 90%;
+    }
+    .tituloPagina{
+        @include textos(1rem,700);
+        color: nth($list: $paleta-principal, $n: 6)
+    }
+    .tituloSeccion{
+        @include textos(1rem,700);
     }
     .menuBkg{
-        display: flex;
-        justify-content: center;
-        background-color: $color-gris1;
+        @include flex-justify-center;
+        @include dimensiones(100vw, fit-content);
+        background-color: nth($list: $paleta-principal, $n: 2);
+        position: sticky;
+        top: 0px;
         .menuContenedor{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 40px;
-            top: 26px;
+            @include dimensiones(90vw,25px);
+            @include flex-space-between;
             .menuLogo{
                 display: none;
             }
@@ -64,50 +88,24 @@ header{
                 text-transform: uppercase;
                 text-decoration: none;
             }
+            .menuLogo:hover{
+                transition: $transition-duration0;
+                transform: scale($hover-tranformation-scale);
+            }
+            .menuElement:hover{
+                transition: $transition-duration0;
+                transform: scale($hover-tranformation-scale);
+            }
+            .menuLogin:hover{
+                transition: $transition-duration0;
+                transform: scale($hover-tranformation-scale);
+            }
         }
     }
-    .menuLogo:hover{
-        transition: $transition-duration0;
-        transform: scale($hover-tranformation-scale);
-    }
-    .menuElement:hover{
-        transition: $transition-duration0;
-        transform: scale($hover-tranformation-scale);
-    }
-    .menuLogin:hover{
-        transition: $transition-duration0;
-        transform: scale($hover-tranformation-scale);
-    }
-}
-main{
-    background-color: $color-gris0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100vw;
-    height: 100%;
-    margin-top: 82px;
-    .hr1{
-        margin-bottom: 20px;
-    }
-    .hr2{
-        width: 90%;
-    }
-    .tituloSeccion{
-        display: flex;
-        justify-content: flex-start;
-        margin-bottom: 10px;
-        text-transform: uppercase;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 1rem;
-    }
     .bienvenidaContenedor{
+        @include flex-column-justify-align-center;
         background-image: url('../img/welcome_bkg.png');
         background-size: cover;
-        display: flex;
-        flex-flow: column;
-        justify-content: center;
-        align-items: center;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: $color-blanco1;
         text-transform: uppercase;
@@ -148,6 +146,11 @@ main{
     .discordContenedor{
         display: none;
     }
+    .contenedorRojo{
+        @include flex-justify-align-center;
+        @include dimensiones(100vw,100px);
+        background-color: $color-rojo0;
+    }
     .contenedorGris{
         display: flex;
         flex-flow: column;
@@ -178,26 +181,19 @@ main{
                 height: fit-content;
                 width: 90vw;
                 .evento{
-                    display: flex;
-                    background-image: linear-gradient(to left, $gradiente-activo-1,$gradiente-activo-2,$gradiente-activo-1), url('../img/evento_bkg.png');
-                    background-size: cover;
-                    color: $color-blanco1;
-                    width: 90vw;
-                    height: fit-content;
-                    padding: 10px;
-                    margin-bottom: 20px;
-                    border-radius: 0px 20px 0px 20px;
+                    background-image: $evento-bg-i;
+                    display: map-get($map: $evento, $key: display);
+                    background-size: map-get($map: $evento, $key: background-size);
+                    color: map-get($map: $evento, $key: color);
+                    width: map-get($map: $evento, $key: width);
+                    height: map-get($map: $evento, $key: height);
+                    padding: map-get($map: $evento, $key: padding);
+                    margin-bottom: map-get($map: $evento, $key: margin-bottom);
+                    border-radius: map-get($map: $evento, $key: border-radius);
                 }
                 .racenow{
-                    display: flex;
-                    background-image: linear-gradient(to left, $gradiente-activo-1,$gradiente-activo-2,$gradiente-activo-1), url('../img/racenow_bkg.png');
-                    background-size: cover;
-                    color: whitesmoke;
-                    width: 90vw;
-                    height: fit-content;
-                    padding: 10px;
-                    margin-bottom: 20px;
-                    border-radius: 0px 20px 0px 20px;
+                    @extend .evento;
+                    background-image: $racenow-bg-i;
                 }
             }
             .eventosFinalizados{
@@ -209,26 +205,19 @@ main{
                 height: fit-content;
                 width: 90vw;
                 .evento{
-                    display: flex;
-                    background-image: linear-gradient(to left, $gradiente-finalizado-1,$gradiente-finalizado-2,$gradiente-finalizado-1), url('../img/evento_bkg.png');
-                    background-size: cover;
-                    color: $color-blanco1;
-                    width: 90vw;
-                    height: fit-content;
-                    padding: 10px;
-                    margin-bottom: 20px;
-                    border-radius: 0px 20px 0px 20px;
+                    background-image: $eventoFinalizado-bg-i;
+                    display: map-get($map: $evento, $key: display);
+                    background-size: map-get($map: $evento, $key: background-size);
+                    color: map-get($map: $evento, $key: color);
+                    width: map-get($map: $evento, $key: width);
+                    height: map-get($map: $evento, $key: height);
+                    padding: map-get($map: $evento, $key: padding);
+                    margin-bottom: map-get($map: $evento, $key: margin-bottom);
+                    border-radius: map-get($map: $evento, $key: border-radius);
                 }
                 .racenow{
-                    display: flex;
-                    background-image: linear-gradient(to left, $gradiente-finalizado-1,$gradiente-finalizado-2,$gradiente-finalizado-1), url('../img/racenow_bkg.png');
-                    background-size: cover;
-                    color: $color-blanco1;
-                    width: 90vw;
-                    height: fit-content;
-                    padding: 10px;
-                    margin-bottom: 20px;
-                    border-radius: 0px 20px 0px 20px;
+                    @extend .evento;
+                    background-image: $racenowFinalizado-bg-i;
                 }
             }
             .eventoLadoIzq{
@@ -281,6 +270,100 @@ main{
                 }
             }
         }
+        .contenedorLive{
+            color: whitesmoke;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: fit-content;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            .divMainStream{
+                display: flex;
+                flex-flow: column;
+                justify-content: flex-end;
+                color: whitesmoke;
+                height: fit-content;
+                width: 90vw;
+                .iframeContenedor{
+                    @include dimensiones(90vw,50.6vw);
+                }
+            }
+            .suscribirContenedor{
+                display: flex;
+                justify-content: flex-end;
+                width: 90vw;
+                .suscribirBoton{
+                    display: flex;
+                    background-color: red;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 5px;
+                    padding: 5px 10px 5px 10px;
+                    border-radius: 5px;
+                    text-transform: uppercase;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    font-size: 0.65rem;
+                    font-weight: 700;
+                }
+            }
+        }
+        .loginContenedor{
+            @include dimensiones(90vw, fit-content);
+            padding-top: 5px;
+            padding-bottom: 5px;
+            .loginForm{
+                display: grid;
+                grid-template-columns: 1;
+                grid-template-rows: 3;
+                grid-template-areas: "loginUser" "loginPass" "loginAction";
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 0.65rem;
+                font-weight: 500;
+                text-transform: uppercase;
+                width: 90vw;
+                height: fit-content;
+                .loginUser{
+                    grid-area: loginUser;
+                    @include flex-column-align-center;
+                }
+                .loginPass{
+                    grid-area: loginPass;
+                    @include flex-column-align-center;
+                }
+                .loginAction{
+                    grid-area: loginAction;
+                    @include flex-column-align-center;
+                    .loginBoton{
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        padding: 3px 10px 3px 10px;
+                        margin-top: 5px;
+                    }
+                }
+                .loginLabel{
+                    text-align: center;
+                    @include flex-justify-center;
+                    margin-bottom: 5px;
+                }
+                .loginCaja{
+                    text-align: center;
+                    @include flex-justify-center;
+                    margin-bottom: 5px;
+                    width: 250px;
+                    height: 30px;
+                    border-radius: 5px;
+                }
+                .claveReset{
+                    color: whitesmoke;
+                    text-decoration: none;
+                    margin-top: 10px;
+                }
+            }
+        }
     }
     .contenedorBlanco{
         display: flex;
@@ -288,7 +371,6 @@ main{
         justify-content: center;
         align-items: center;
         background-color: $color-blanco1;
-        color: $color-gris1;
         height: fit-content;
         width: 100vw;
         .videosContenedor{
@@ -301,7 +383,7 @@ main{
             padding-top: 20px;
             padding-bottom: 20px;
             .videosAnteriores{
-                color: $color-gris2;
+                color: nth($list: $paleta-principal, $n: 3);
                 display: flex;
                 flex-flow: column;
                 justify-content: center;
@@ -315,35 +397,116 @@ main{
                     justify-content: center;
                     align-items: center;
                     height: fit-content;
-                    gap: 5px;
+                }
+            }
+        }
+        .reglamento{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 0.65rem;
+            font-weight: 500;
+            width: 90vw;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .contactoContenedor{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 90vw;
+            height: fit-content;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            .contactoForm{
+                display: grid;
+                grid-template-columns: 1;
+                grid-template-rows: 6;
+                grid-template-areas: "contactoNombre" "contactoApellido" "contactoEmail" "contactoEmail" "contactoPais" "contactoComentario" "contactoAction";
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-weight: 500;
+                font-size: 0.65rem;
+                text-transform: uppercase;
+                width: 90vw;
+                .contactoNombre{
+                    grid-area: contactoNombre;
+                    @include flex-column-align-center;
+                    margin-bottom: 5px;
+                }
+                .contactoApellido{
+                    grid-area: contactoApellido;
+                    @include flex-column-align-center;
+                    margin-bottom: 5px;
+                }
+                .contactoEmail{
+                    grid-area: contactoEmail;
+                    @include flex-column-align-center;
+                    margin-bottom: 5px;
+                }
+                .contactoPais{
+                    grid-area: contactoPais;
+                    @include flex-column-align-center;
+                    margin-bottom: 5px;
+                }
+                .contactoComentario{
+                    grid-area: contactoComentario;
+                    @include flex-column-align-center;
+                    margin-bottom: 5px;
+                }
+                .contactoAction{
+                    grid-area: contactoAction;
+                    @include flex-column-align-center;
+                    .contactoBoton{
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        padding: 3px 10px 3px 10px;
+                        margin-top: 5px;
+                    }
+                }
+                .contactoLabel{
+                    margin-bottom: 5px;
+                }
+                .contactoCaja{
+                    text-align: center;
+                    width: 250px;
+                    height: 30px;
+                    border-radius: 5px;
+                }
+                .comentarioCaja{
+                    text-align: center;
+                    width: 250px;
+                    height: 250px;
+                    border-radius: 5px;
                 }
             }
         }
     }
 }
 footer{
-    display: flex;
-    justify-content: center;
-    align-content: center;
+    @include dimensiones(100vw,fit-content);
+    @include flex-justify-align-center;
     background-color: $color-black0;
-    width: 100vw;
-    height: fit-content;
+    .discordFixed{
+        @include dimensiones(50px, 50px);
+        @include flex-justify-align-center;
+        background-color: nth($list: $paleta-principal, $n: 4);
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
+        padding: 8px;
+        border-radius: 10px;
+    }
     .contenedorNegro{
+        @include dimensiones(90vw,fit-content);
         display: grid;
         grid-template-columns: 3;
         grid-template-rows: 3;
         grid-template-areas: "footerLogo footerMenu footerSocial" "footerParrafo footerMenu footerSocial" "copyrights copyrights copyrights";
         justify-content: center;
         align-items: flex-start;
-        background-color: $color-black0;
         color: $color-blanco1;
-        height: fit-content;
-        width: 90vw;
         .footerLogo{
+            @include flex-flex-start;
             grid-area: footerLogo;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
             margin: 10px;
             height: 50px;
         }
@@ -364,7 +527,7 @@ footer{
             margin: 10px;
         }
         .footList{
-            color: $color-gris4;
+            color: nth($list: $paleta-principal, $n: 5);
             list-style-type: none;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-size: small;
@@ -379,14 +542,20 @@ footer{
             .footItem{
                 display: flex;
                 align-items: center;
-                color: $color-gris4;
+                color: nth($list: $paleta-principal, $n: 5);
                 font-size: 0.5rem;
                 column-gap: 5px;
                 margin-bottom: 5px;
+                .footIcon{
+                    @include dimensiones(20px,20px);
+                    background-color: nth($list: $paleta-principal, $n: 4);
+                    border-radius: 20px;
+                    padding: 3px;
+                }
             }
             .footLink{
                 text-decoration: none;
-                color: $color-gris4;
+                color: nth($list: $paleta-principal, $n: 5);
             }
         }
         .copyrights{
@@ -404,126 +573,52 @@ footer{
         }
     }
 }
-.fa-brands{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $color-gris3;
-    color:  $color-gris2;
-    border-radius: 20px;
-    height: 20px;
-    width: 20px;
-    margin-right: 5px;
-}
-.fa-brands:hover{
-    transition: $transition-duration0;
-    transform: scale($hover-tranformation-scale);
-}
-.fa-brands.fa-discord.fa-xl{
-    display: none;
-    color: $color-blanco0;
-    background-color:  $color-gris4;
-    position: fixed;
-    height: 50px;
-    width: 50px;
-    border-radius: 10px;
-    bottom: 40px;
-    right: 40px;
-    justify-content: center;
-    align-items: center;
-}
-@media screen and (max-width:400px){
-    .textoBienvenida{
-        display: none;
-    }
-}
 @media screen and (min-width:576px){
     header{
-        height: 90px;
         .menuBkg{
             .menuContenedor{
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                height: 58px;
-                top: 32px;
-                width: 90vw;
+                @include dimensiones(90vw,35px);
+                .menuLogo{
+                    @include flex-flex-start;
+                    height: 25px;
+                }
+                .menuLinks{
+                    display: flex;
+                    .menuElement{
+                        @include dimensiones(25px,25px);
+                        border-radius: 25px;
+                    }
+                }
+            }
+        }
+    }
+    main{
+        .hr1{
+            margin-bottom: 10px;
+        }
+        .tituloPagina{
+            font-size: 1.5rem;
+        }
+        .menuBkg{
+            @include flex-justify-center;
+            @include dimensiones(100vw, fit-content);
+            background-color: nth($list: $paleta-principal, $n: 2);
+            position: sticky;
+            top: 0px;
+            .menuContenedor{
+                @include dimensiones(90vw,40px);
+                @include flex-space-between;
                 .menuLogo{
                     display: none;
-                    justify-content: flex-start;
-                    height: 30px;
-                    width: 80px;
                 }
                 .menuElement{
                     font-size: 0.75rem;
                     font-weight: 600;
-                    margin: 5px;
+                    margin-right: 5px;
                 }
                 .menuLogin{
                     font-size: 0.75rem;
                     font-weight: 600;
-                    margin: 5px;
-                }
-            }
-        }
-        .topMenuBkg{
-            height: 32px;
-            .topMenuContenedor{
-                display: flex;
-                justify-content: space-between;
-                width: 90vw;
-                .topMenuLogo{
-                    display: flex;
-                    justify-content: flex-start;
-                    height: 20px;
-                }
-            }
-        }
-    
-    }
-    main{
-        width: 100vw;
-        height: 100%;
-        margin-top: 90px;
-        .hr1{
-            margin-bottom: 10px;
-        }
-        .discordContenedor{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            padding: 30px;
-            .discord{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 1000px;
-                height: 100%;
-                .discordTexto{
-                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                    color: $color-blanco1;
-                    display: flex;
-                    font-size: 1.5rem;
-                    font-weight: 600;
-                    font-style: oblique;
-                    margin-right: 100px;
-                }
-                .discordBoton{
-                    display: flex;
-                    background-image: url('../img/discord.png');
-                    background-repeat: no-repeat;
-                    background-size: 50px;
-                    background-position: 50%;
-                    background-color: $color-gris2;
-                    color: $color-blanco1;
-                    height: 70px;
-                    width: 70px;
-                    border-radius: 20px;
-                }
-                .discordBoton:hover{
-                    transition: $transition-duration1;
-                    transform: scale($hover-tranformation-scale);
                 }
             }
         }
@@ -544,22 +639,28 @@ footer{
                 width: 520px;
             }
         }
+        .contenedorRojo{
+            @include dimensiones(100vw,100px);
+        }
         .contenedorGris{
-            .eventoLadoIzq{
-                .eventoTitulo{
-                    font-size: 1rem;
+            .eventosContenedor{
+                .eventoLadoIzq{
+                    .eventoTitulo{
+                        font-size: 0.85rem;
+                    }
+                    .eventoSubtitulo{
+                        font-size: 0.65rem;
+                    }
+                    .eventoLI{
+                        font-size: 0.65rem;
+                        margin-bottom: 2px;
+                    }
                 }
-                .eventoSubtitulo{
-                    font-size: 0.65rem;
-                }
-                .eventoLI{
-                    font-size: 0.65rem;
-                }
-            }
-            .eventoLadoDer{
-                .eventoInfo{
-                    font-size: 0.65rem;
-                    padding: 6px 12px 6px 12px;
+                .eventoLadoDer{
+                    .eventoInfo{
+                        font-size: 0.65rem;
+                        padding: 6px 12px 6px 12px;
+                    }
                 }
             }
         }
@@ -574,62 +675,83 @@ footer{
     footer{
         .contenedorNegro{
             width: 90vw;
-            grid-template-columns: 1.5fr 0.5fr 0.5fr;
+            padding-top: 20px;
             .footerLogo{
-                display: flex;
-                margin: 10px;
                 height: 60px;
             }
             .footerParrafo{
-                font-size: 0.65rem;
-                padding-left: 10px;
+                font-size: 0.7rem;
+                line-height: 20px;
                 padding-right: 10vw;
             }
             .footList{
                 .footTitles{
-                    font-size: 1rem;
-                    .footItem{
-                        font-size: 0.65rem;
-                        margin-bottom: 10px;
-                        column-gap: 10px;
+                    font-size: 0.75rem;
+                }
+                .footItem{
+                    font-size: 0.65rem;
+                    margin-bottom: 10px;
+                    column-gap: 10px;
+                    .footIcon{
+                        @include dimensiones(20px,20px);
+                        background-color: nth($list: $paleta-principal, $n: 4);
+                        border-radius: 20px;
+                        padding: 4px;
                     }
                 }
             }
             .copyrights{
-                margin-top: 30px;
-                margin-bottom: 15px;
+                margin-top: 20px;
+                margin-bottom: 20px;
                 font-size: 0.75rem;
             }
         }
     }
-    .fa-brands{
-        border-radius: 25px;
-        height: 25px;
-        width: 25px;
-    }
 }
 @media screen and (min-width:1000px) {
     header{
-        height: 114px;
-        .topMenuBkg{
-            height: 38px;
-            .topMenuContenedor{
-                display: flex;
-                justify-content: flex-end;
-                width: 1000px;
-                .topMenuLogo{
+        .menuBkg{
+            @include dimensiones(100vw,fit-content);
+            .menuContenedor{
+                @include dimensiones(1000px,40px);
+                .menuLogo{
                     display: none;
+                }
+                .menuLinks{
+                    display: flex;
+                    .menuElement{
+                        @include dimensiones(25px,25px);
+                        border-radius: 25px;
+                        margin-left: 5px;
+                        padding: 5px;
+                    }
                 }
             }
         }
+    }
+    main{
+        .hr1{
+            margin-bottom: 20px;
+        }
+        .hr2{
+            width: 90%;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        .tituloPagina{
+            font-size: 2rem;
+        }
+        .tituloSeccion{
+            font-size: 1.5rem;
+        }
         .menuBkg{
+            position: sticky;
+            top: 0px;
             .menuContenedor{
+                @include dimensiones(1000px,76px);
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                height: 76px;
-                top: 38px;
-                width: 1000px;
                 .menuLogo{
                     display: flex;
                     justify-content: flex-start;
@@ -649,83 +771,78 @@ footer{
                 }
             }
         }
-    }
-    main{
-         margin-top: 114px;
-            .hr1{
-                margin-bottom: 20px;
+        .bienvenidaContenedor{
+            height: 300px;
+            padding: 50px;
+            .tituloBienvenida{
+                font-size: 2.5rem;
+                margin-bottom: 30px;
             }
-            .hr2{
-                width: 90%;
-                margin-top: 5px;
-                margin-bottom: 5px;
-            }
-            .bienvenidaContenedor{
-                height: 300px;
-                padding: 50px;
-                .tituloBienvenida{
-                    font-size: 2.5rem;
-                    margin-bottom: 30px;
-                }
-                .subtituloBienvenida{
-                    font-size: 1.5rem;
-                    font-weight: 500;
-                    margin-bottom: 30px;
-                }
-                .textoBienvenida{
-                    font-size: 0.75rem;
-                    width: 600px;
-                }
-                .racenowLogo{
-                    width: 600px;
-                }
-                .byafrt{
-                    width: 600px;
-                    font-size: 1.5rem;
-                }
-            }
-            .discordContenedor{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                padding: 30px;
-                .discord{
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width: 1000px;
-                    height: 100%;
-                    .discordTexto{
-                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                        color: $color-blanco1;
-                        display: flex;
-                        font-size: 2rem;
-                        font-weight: 600;
-                        font-style: oblique;
-                        margin-right: 100px;
-                    }
-                    .discordBoton{
-                        display: flex;
-                        background-image: url('../img/discord.png');
-                        background-repeat: no-repeat;
-                        background-size: 60px;
-                        background-position: 50%;
-                        background-color: $color-gris2;
-                        color: $color-blanco1;
-                        height: 90px;
-                        width: 90px;
-                        border-radius: 20px;
-                    }
-                    .discordBoton:hover{
-                        transition: $transition-duration1;
-                        transform: scale($hover-tranformation-scale);
-                    }
-                }
-            }
-            .seccionHeader{
-                padding: 50px;
+            .subtituloBienvenida{
                 font-size: 1.5rem;
+                font-weight: 500;
+                margin-bottom: 30px;
+            }
+            .textoBienvenida{
+                font-size: 0.75rem;
+                width: 600px;
+            }
+            .racenowLogo{
+                width: 600px;
+            }
+            .byafrt{
+                width: 600px;
+                font-size: 1.5rem;
+            }
+        }
+        .discordContenedor{
+            @include dimensiones(100vw,fit-content);
+            @include flex-justify-center;
+            padding: 30px;
+            .discord{
+                @include flex-justify-align-center;
+                width: 1000px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                .discordTitulo{
+                    display: flex;
+                    color: nth($list: $paleta-principal, $n: 7);
+                    font-size: 2rem;
+                    font-weight: 600;
+                    font-style: oblique;
+                    margin-right: 100px;
+                }
+                .discordBoton{
+                    @include dimensiones(250px,80px);
+                    @include flex-justify-align-center;
+                    background-color: nth($list: $paleta-principal, $n: 7);
+                    border-radius: 20px;
+                    padding: 10px;
+                    .discordLogo{
+                        @include dimensiones(80px,80px);
+                        @include flex-justify-align-center
+                    }
+                    .discordTextos{
+                        @include dimensiones(170px,80px);
+                        @include flex-column-justify-align-center;
+                        color: nth($list: $paleta-principal, $n: 2);
+                        .texto1{
+                            text-transform: uppercase;
+                            font-size: 1rem;
+                        }
+                        .texto2{
+                            font-size: 2rem;
+                            font-style: oblique;
+                        }
+                    }
+                }
+                .discordBoton:hover{
+                    transition: $transition-duration1;
+                    transform: scale($hover-tranformation-scale);
+                }
+            }
+        }
+            .contenedorRojo{
+                @include dimensiones(100vw,150px);
             }
             .contenedorGris{
                 .eventosContenedor{
@@ -782,6 +899,88 @@ footer{
                         }
                     }
                 }
+                .contenedorLive{
+                    color: whitesmoke;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100vw;
+                    height: fit-content;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    .divMainStream{
+                        display: flex;
+                        flex-flow: column;
+                        justify-content: flex-end;
+                        color: whitesmoke;
+                        height: fit-content;
+                        width: 1000px;
+                        .iframeContenedor{
+                            @include dimensiones(1000px,562px);
+                        }
+                    }
+                    .suscribirContenedor{
+                        display: flex;
+                        justify-content: flex-end;
+                        width: 1000px;
+                        .suscribirBoton{
+                            display: flex;
+                            background-color: red;
+                            justify-content: center;
+                            align-items: center;
+                            margin-top: 5px;
+                            padding: 10px 15px 10px 15px;
+                            border-radius: 5px;
+                            text-transform: uppercase;
+                            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                            font-size: 1rem;
+                            font-weight: 700;
+                        }
+                    }
+                }
+                .loginContenedor{
+                    @include dimensiones(1000px, fit-content);
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                    .loginForm{
+                        display: grid;
+                        grid-template-columns: 2;
+                        grid-template-rows: 2;
+                        grid-template-areas: "loginUser loginPass" "loginAction loginAction";
+                        font-size: 1rem;
+                        width: 1000px;
+                        height: fit-content;
+                        .loginUser{
+                            grid-area: loginUser;
+                        }
+                        .loginPass{
+                            grid-area: loginPass;
+                        }
+                        .loginAction{
+                            grid-area: loginAction;
+                            .loginBoton{
+                                padding: 6px 20px 6px 20px;
+                                margin-top: 10px;
+                            }
+                        }
+                        .loginLabel{
+                            text-align: center;
+                            margin-bottom: 10px;
+                        }
+                        .loginCaja{
+                            @include dimensiones(250px,30px);
+                            text-align: center;
+                            margin-bottom: 10px;
+                            border-radius: 5px;
+                        }
+                        .claveReset{
+                            color: whitesmoke;
+                            text-decoration: none;
+                            margin-top: 10px;
+                        }
+                    }
+                }
             }
             .contenedorBlanco{
                 .videosContenedor{
@@ -792,23 +991,76 @@ footer{
                             grid-template-columns: 5;
                             grid-template-rows: 1;
                             grid-template-areas: "videoMini1 videoMini2 videoMini3 videoMini4 videoMini5 videoMini5";
+                            justify-content: space-between;
                             width: 1000px;
                         }
                     }
                 }
-            }
-            .tituloSeccion{
-                font-size: 1.5rem;
+                .reglamento{
+                    @include dimensiones(1000px,fit-content);
+                    font-size: 1rem;
+                }
+                .contactoContenedor{
+                    @include dimensiones(1000px, fit-content);
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                    .contactoForm{
+                        grid-template-columns: 2;
+                        grid-template-rows: 5;
+                        grid-template-areas: "contactoNombre contactoComentario" "contactoApellido contactoComentario" "contactoEmail contactoComentario" "contactoPais contactoComentario" "contactoAction contactoAction";
+                        justify-content: space-between;
+                        font-size: 1rem;
+                        width: 1000px;
+                        .contactoNombre{
+                            margin-bottom: 10px;
+                            margin-left: 100px;
+                        }
+                        .contactoApellido{
+                            margin-bottom: 10px;
+                            margin-left: 100px;
+                        }
+                        .contactoEmail{
+                            margin-bottom: 10px;
+                            margin-left: 100px;
+                        }
+                        .contactoPais{
+                            margin-bottom: 10px;
+                            margin-left: 100px;
+                        }
+                        .contactoComentario{
+                            margin-bottom: 10px;
+                            margin-right: 100px;
+                        }
+                        .contactoLabel{
+                            margin-bottom: 10px;
+                        }
+                        .contactoAction{
+                            .contactoBoton{
+                                padding: 6px 20px 6px 20px;
+                                margin-top: 10px;
+                            }
+                        }
+                    }
+                }
             }
         }
     footer{
+        .discordFixed{
+            @include dimensiones(50px, 50px);
+            bottom: 40px;
+            right: 40px;
+            padding: 8px;
+            border-radius: 10px;
+        }
         .contenedorNegro{
             width: 1000px;
+            padding-top: 20px;
             .footerLogo{
                 height: 80px;
             }
             .footerParrafo{
-                font-size: 0.75rem;
+                font-size: 0.8rem;
+                line-height: 25px;
                 padding-right: 10vw;
             }
             .footList{
@@ -819,21 +1071,19 @@ footer{
                     font-size: 0.75rem;
                     margin-bottom: 15px;
                     column-gap: 15px;
+                    .footIcon{
+                        @include dimensiones(20px,20px);
+                        background-color: nth($list: $paleta-principal, $n: 4);
+                        border-radius: 20px;
+                        padding: 3px;
+                    }
                 }
             }
             .copyrights{
-                margin-top: 40px;
+                margin-top: 20px;
                 margin-bottom: 20px;
                 font-size: 1rem;
             }
         }
-    }
-    .fa-brands{
-        border-radius: 25px;
-        height: 25px;
-        width: 25px;
-    }
-    .fa-brands.fa-discord.fa-xl{
-        display: flex;
     }
 }
