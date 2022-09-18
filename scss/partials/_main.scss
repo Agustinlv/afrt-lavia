@@ -285,7 +285,7 @@ main{
                     background-color: red;
                     justify-content: center;
                     align-items: center;
-                    margin-top: 5px;
+                    margin-top: 10px;
                     padding: 5px 10px 5px 10px;
                     border-radius: 5px;
                     text-transform: uppercase;
@@ -376,12 +376,28 @@ main{
                 width: 90vw;
                 .videoGaleria{
                     display: grid;
-                    grid-template-columns: 1;
+                    grid-template-columns: 2;
                     grid-template-rows: auto;
-                    grid-template-areas: "videoMini1" "videoMini2" "videoMini3" "videoMini4" "videoMini5";
-                    justify-content: center;
+                    grid-template-areas: "thumb1 thumb2" "thumb3 thumb4" "thumb5 thumb5";
+                    justify-content: space-around;
                     align-items: center;
                     height: fit-content;
+                    gap: 3px;
+                    .thumb1{
+                        grid-area: thumb1;
+                    }
+                    .thumb2{
+                        grid-area: thumb2;
+                    }
+                    .thumb3{
+                        grid-area: thumb3;
+                    }
+                    .thumb4{
+                        grid-area: thumb4;
+                    }
+                    .thumb5{
+                        grid-area: thumb5;
+                    }
                 }
             }
         }
@@ -544,10 +560,15 @@ main{
             }
         }
         .contenedorBlanco{
-            .videoGaleria{
-                grid-template-columns: 2;
-                grid-template-rows: 3;
-                grid-template-areas: "videoMini1 videoMini2" "videoMini3 videoMini4" "videoMini5 videoMini5";
+            .videosContenedor{
+                .videosAnteriores{
+                    .videoGaleria{
+                        grid-template-columns: 3;
+                        grid-template-areas: "thumb1 thumb2 thumb3" "thumb4 thumb5 thumb5";
+                        justify-content: space-between;
+                        gap: 10px;
+                    }
+                }
             }
         }
     }
@@ -752,19 +773,9 @@ main{
                     }
                 }
                 .suscribirContenedor{
-                    display: flex;
-                    justify-content: flex-end;
                     width: 1000px;
                     .suscribirBoton{
-                        display: flex;
-                        background-color: red;
-                        justify-content: center;
-                        align-items: center;
-                        margin-top: 5px;
                         padding: 10px 15px 10px 15px;
-                        border-radius: 5px;
-                        text-transform: uppercase;
-                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                         font-size: 1rem;
                         font-weight: 700;
                     }
@@ -820,10 +831,8 @@ main{
                     width: 1000px;
                     .videoGaleria{
                         grid-template-columns: 5;
-                        grid-template-rows: 1;
-                        grid-template-areas: "videoMini1 videoMini2 videoMini3 videoMini4 videoMini5 videoMini5";
-                        justify-content: space-between;
-                        width: 1000px;
+                        grid-template-areas: "thumb1 thumb2 thumb3 thumb4 thumb5";
+                        justify-content: space-around;
                     }
                 }
             }
