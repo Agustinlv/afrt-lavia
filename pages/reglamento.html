@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="simracing, simulacion, simulation, competition, racing,simulators, carreras, races">
     <meta name="description" content="AFRT es una comunidad de simracing en donde vas a poder conocer a otros pilotos virtuales como vos, donde vas a poder competir online en eventos, campeonatos y carreras diarias.">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/stylesheet.css">
     <title>AFRT - CAMPEONATOS</title>
 </head>
@@ -26,14 +28,24 @@
         </div>
     </header>
     <main>
+        <!--Menú principal de navegación del sitio. Es sticky, con lo cual está siempre presente-->
+        <!--El menú principal utiliza Bootstrap-->
         <div class="menuBkg">
-            <nav class="menuContenedor">
-                <a class="menuLogo" href="../index.html"><img src="../img/logo_afrt_blanco.png" alt="logo afrt"></a>
-                <a class="menuElement" href="../pages/campeonatos.html">campeonatos</a>
-                <a class="menuElement" href="../pages/reglamento.html">reglamento</a>
-                <a class="menuElement" href="../pages/racenow.html">racenow</a>
-                <a class="menuElement" href="../pages/afrttv.html">afrt tv</a>
-                <a class="menuLogin" href="../pages/login.html">login/contacto</a>
+            <nav class="navbar navbar-expand-sm navbar-dark d-flex justify-content-sm-center">
+                <div class="container-fluid">
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="navbar-nav text-uppercase menuContenedor">
+                      <a class="nav-link menuLogo active" aria-current="page" href="../index.html"><img src="../img/logo_afrt_blanco.png" alt="logo afrt"></a>
+                      <a class="nav-link menuElement" href="../pages/campeonatos.html">campeonatos</a>
+                      <a class="nav-link menuElement" href="../pages/reglamento.html">reglamento</a>
+                      <a class="nav-link menuElement" href="../pages/racenow.html">racenow</a>
+                      <a class="nav-link menuElement" href="../pages/afrttv.html">afrttv</a>
+                      <a class="nav-link menuLogin" href="../pages/login.html">login/contacto</a>
+                    </div>
+                </div>
             </nav>
         </div>
         <div class="contenedorRojo">
@@ -124,9 +136,11 @@
                 </ul>
             </nav>
             <div class="copyrights">
-                <h4>A FONDO RACING TEAM es una marca registrada de AFRT LTD. Todos los derechos reservados 2022.</h4>
+                <h4 class="copyrights">A FONDO RACING TEAM es una marca registrada de AFRT LTD. Todos los derechos reservados 2022.</h4>
             </div>
         </div>
+    <!-- Bootstrap JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     </footer>
 </body>
 </html>

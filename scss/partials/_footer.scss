@@ -1,0 +1,175 @@
+footer{
+    @include dimensiones(100vw,fit-content);
+    @include flex-justify-align-center;
+    background-color: $color-black0;
+    .discordFixed{
+        @include dimensiones(50px, 50px);
+        @include flex-justify-align-center;
+        display: none;
+        background-color: nth($list: $paleta-principal, $n: 4);
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
+        padding: 8px;
+        border-radius: 10px;
+    }
+    .contenedorNegro{
+        @include dimensiones(90vw,fit-content);
+        display: grid;
+        grid-template-columns: 3;
+        grid-template-rows: 3;
+        grid-template-areas: "footerLogo footerMenu footerSocial" "footerParrafo footerMenu footerSocial" "copyrights copyrights copyrights";
+        justify-content: center;
+        align-items: flex-start;
+        color: $color-blanco1;
+        .footerLogo{
+            @include flex-flex-start;
+            grid-area: footerLogo;
+            margin: 10px;
+            height: 50px;
+        }
+        .footerParrafo{
+            grid-area: footerParrafo;
+            color: $color-blanco1;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 0.5rem;
+            margin: 10px;
+            padding-right: 10vw;
+        }
+        .footerMenu{
+            grid-area: footerMenu;
+            margin: 10px;
+        }
+        .footerSocial{
+            grid-area: footerSocial;
+            margin: 10px;
+        }
+        .footList{
+            color: nth($list: $paleta-principal, $n: 5);
+            list-style-type: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: small;
+            font-weight: 500;
+            text-transform: uppercase;
+            .footTitles{
+                text-transform: uppercase;
+                font-size: 0.65rem;
+                font-weight: 700;
+                margin-bottom: 20px;
+            }
+            .footItem{
+                display: flex;
+                align-items: center;
+                color: nth($list: $paleta-principal, $n: 5);
+                font-size: 0.5rem;
+                column-gap: 5px;
+                margin-bottom: 5px;
+                .footIcon{
+                    @include dimensiones(20px,20px);
+                    background-color: nth($list: $paleta-principal, $n: 4);
+                    border-radius: 20px;
+                    padding: 3px;
+                }
+            }
+            .footLink{
+                text-decoration: none;
+                color: nth($list: $paleta-principal, $n: 5);
+            }
+        }
+        .copyrights{
+            grid-area: copyrights;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: fit-content;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: $color-blanco1;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 0.65rem;
+            font-weight: 400;
+        }
+    }
+}
+@media screen and (min-width:576px){
+    footer{
+        .contenedorNegro{
+            width: 90vw;
+            padding-top: 20px;
+            .footerLogo{
+                height: 60px;
+            }
+            .footerParrafo{
+                font-size: 0.7rem;
+                line-height: 20px;
+                padding-right: 10vw;
+            }
+            .footList{
+                .footTitles{
+                    font-size: 0.75rem;
+                }
+                .footItem{
+                    font-size: 0.65rem;
+                    margin-bottom: 10px;
+                    column-gap: 10px;
+                    .footIcon{
+                        @include dimensiones(20px,20px);
+                        background-color: nth($list: $paleta-principal, $n: 4);
+                        border-radius: 20px;
+                        padding: 4px;
+                    }
+                }
+            }
+            .copyrights{
+                margin-top: 20px;
+                margin-bottom: 20px;
+                font-size: 0.75rem;
+            }
+        }
+    }
+}
+@media screen and (min-width:1000px) {
+    footer{
+        .discordFixed{
+            @include dimensiones(50px, 50px);
+            display: flex;
+            bottom: 40px;
+            right: 40px;
+            padding: 8px;
+            border-radius: 10px;
+        }
+        .contenedorNegro{
+            width: 1000px;
+            padding-top: 20px;
+            .footerLogo{
+                height: 80px;
+            }
+            .footerParrafo{
+                font-size: 0.8rem;
+                line-height: 25px;
+                padding-right: 10vw;
+            }
+            .footList{
+                .footTitles{
+                    font-size: 1rem;
+                }
+                .footItem{
+                    font-size: 0.75rem;
+                    margin-bottom: 10px;
+                    column-gap: 10px;
+                    .footIcon{
+                        @include dimensiones(20px,20px);
+                        background-color: nth($list: $paleta-principal, $n: 4);
+                        border-radius: 20px;
+                        padding: 3px;
+                    }
+                }
+            }
+            .copyrights{
+                margin-top: 5px;
+                margin-bottom: 10px;
+                font-size: 1rem;
+            }
+        }
+    }
+}

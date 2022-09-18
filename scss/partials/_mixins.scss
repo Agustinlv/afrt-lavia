@@ -1,7 +1,3 @@
-@import "utilities/variables";
-@import "utilities/mapas";
-@import "utilities/listas";
-
 @mixin dimensiones ($width, $height) {
     width: $width;
     height: $height;

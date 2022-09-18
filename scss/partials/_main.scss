@@ -1,0 +1,878 @@
+main{
+    @include flex-column-justify-align-center;
+    @include dimensiones(100vw,fit-content);
+    background-color: $color-gris0;
+    .horzLine1{
+        margin-bottom: 10px;
+        opacity: 100%;
+    }
+    .horzLine2{
+        width: 90%;
+        margin-top: 3px;
+        margin-bottom: 3px;
+        opacity: 100%;
+    }
+    .tituloPagina{
+        @include textos(1rem,700);
+        color: nth($list: $paleta-principal, $n: 6)
+    }
+    .tituloSeccion{
+        @include textos(1rem,700);
+        margin-top: 10px;
+    }
+    .menuBkg{
+        @include flex-justify-center;
+        @include dimensiones(100vw, fit-content);
+        background-color: nth($list: $paleta-principal, $n: 2);
+        position: sticky;
+        top: 0px;
+        .menuContenedor{
+            @include dimensiones(90vw,fit-content);
+            @include flex-space-between;
+            .menuLogo{
+                display: none;
+            }
+            .menuElement{
+                display: flex;
+                align-items: center;
+                color: nth($list: $paleta-principal, $n: 7);
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 0.5rem;
+                font-weight: 500;
+                text-transform: uppercase;
+                text-decoration: none;
+                margin-right: 5px;
+            }
+            .menuLogin{
+                display: flex;
+                align-items: center;
+                color: nth($list: $paleta-principal, $n: 7);
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 0.5rem;
+                font-weight: 500;
+                text-transform: uppercase;
+                text-decoration: none;
+            }
+            .menuLogo:hover{
+                transition: $transition-duration0;
+                transform: scale($hover-tranformation-scale);
+            }
+            .menuElement:hover{
+                transition: $transition-duration0;
+                transform: scale($hover-tranformation-scale);
+            }
+            .menuLogin:hover{
+                transition: $transition-duration0;
+                transform: scale($hover-tranformation-scale);
+            }
+        }
+    }
+    .bienvenidaContenedor{
+        @include flex-column-justify-align-center;
+        background-image: url('../img/welcome_bkg.png');
+        background-size: cover;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: $color-blanco1;
+        text-transform: uppercase;
+        text-align: center;
+        text-shadow: 1px 1px 5px $color-black0, -1px -1px 5px $color-black0;
+        height: 100px;
+        width: 100vw;
+        .tituloBienvenida{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 2px;
+        }
+        .subtituloBienvenida{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+        .textoBienvenida{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 0.5rem;
+            font-weight: 500;
+            color: $color-blanco1;
+            width: 400px;
+        }
+        .racenowLogo{
+            width: 200px;
+        }
+        .byafrt{
+            display: flex;
+            justify-content: flex-end;
+            width: 200px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-style: italic;
+            font-size: 0.5rem;
+        }
+    }
+    .discordContenedor{
+        display: none;
+    }
+    .contenedorRojo{
+        @include flex-justify-align-center;
+        @include dimensiones(100vw,100px);
+        background-color: $color-rojo0;
+    }
+    .contenedorGris{
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $color-gris1;
+        color: $color-blanco1;
+        height: fit-content;
+        width: 100vw;
+        .eventosContenedor{
+            color: $color-blanco1;
+            display: grid;
+            grid-template-columns: 1;
+            grid-template-rows: 2;
+            grid-template-areas: "eventosActivos" "eventosFinalizados";
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: fit-content;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            .eventosActivos{
+                grid-area: eventosActivos;
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                color: $color-blanco1;
+                height: fit-content;
+                width: 90vw;
+                .evento{
+                    background-image: $evento-bg-i;
+                    display: map-get($map: $evento, $key: display);
+                    background-size: map-get($map: $evento, $key: background-size);
+                    color: map-get($map: $evento, $key: color);
+                    width: map-get($map: $evento, $key: width);
+                    height: map-get($map: $evento, $key: height);
+                    padding: map-get($map: $evento, $key: padding);
+                    margin-bottom: map-get($map: $evento, $key: margin-bottom);
+                    border-radius: map-get($map: $evento, $key: border-radius);
+                }
+                .racenow{
+                    @extend .evento;
+                    background-image: $racenow-bg-i;
+                }
+            }
+            .racenowActivos{
+                grid-area: eventosActivos;
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                color: $color-blanco1;
+                height: fit-content;
+                width: 90vw;
+                .racenow{
+                    background-image: $racenow-bg-i;
+                    display: map-get($map: $evento, $key: display);
+                    background-size: map-get($map: $evento, $key: background-size);
+                    color: map-get($map: $evento, $key: color);
+                    width: map-get($map: $evento, $key: width);
+                    height: map-get($map: $evento, $key: height);
+                    padding: map-get($map: $evento, $key: padding);
+                    margin-bottom: map-get($map: $evento, $key: margin-bottom);
+                    border-radius: map-get($map: $evento, $key: border-radius);
+                }
+            }
+            .eventosFinalizados{
+                grid-area: eventosFinalizados;
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                color: $color-blanco1;
+                height: fit-content;
+                width: 90vw;
+                .evento{
+                    background-image: $eventoFinalizado-bg-i;
+                    display: map-get($map: $evento, $key: display);
+                    background-size: map-get($map: $evento, $key: background-size);
+                    color: map-get($map: $evento, $key: color);
+                    width: map-get($map: $evento, $key: width);
+                    height: map-get($map: $evento, $key: height);
+                    padding: map-get($map: $evento, $key: padding);
+                    margin-bottom: map-get($map: $evento, $key: margin-bottom);
+                    border-radius: map-get($map: $evento, $key: border-radius);
+                }
+                .racenow{
+                    @extend .evento;
+                    background-image: $racenowFinalizado-bg-i;
+                }
+            }
+            .eventoLadoIzq{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                text-transform: uppercase;
+                width: 70%;
+                .eventoTitulo{
+                    font-size: 0.5rem;
+                    font-style: italic;
+                    font-weight: 700;
+                    text-shadow: 1px 1px 5px black, -1px -1px 5px black;
+                }
+                .eventoSubtitulo{
+                    font-size: 0.45rem;
+                    font-weight: 700;
+                    margin-bottom: 5px;
+                    text-shadow: 1px 1px 5px black, -1px -1px 5px black;
+                }
+                .eventoLI{
+                    font-size: 0.45rem;
+                    list-style: none;
+                    margin-bottom: 1px;
+                    text-shadow: 1px 1px 5px black, -1px -1px 5px black;
+                }
+            }
+            .eventoLadoDer{
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                text-transform: uppercase;
+                width: 30%;
+                .eventoInfo{
+                    display: flex;
+                    background-color: $color-blanco0;
+                    color: $color-gris0;
+                    text-decoration: none;
+                    font-weight: 900;
+                    font-size: 0.5rem;
+                    justify-content: center;
+                    align-items: center;
+                    width: fit-content;
+                    height: fit-content;
+                    padding: 3px 6px 3px 6px;
+                    border-radius: 5px;
+                }
+                .eventoInfo:hover{
+                    transition: 1s;
+                    transform: scale($hover-tranformation-scale);
+                }
+            }
+        }
+        .contenedorLive{
+            color: whitesmoke;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: fit-content;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            .divMainStream{
+                display: flex;
+                flex-flow: column;
+                justify-content: flex-end;
+                color: whitesmoke;
+                height: fit-content;
+                width: 90vw;
+                .iframeContenedor{
+                    @include dimensiones(90vw,50.6vw);
+                }
+            }
+            .suscribirContenedor{
+                display: flex;
+                justify-content: flex-end;
+                width: 90vw;
+                .suscribirBoton{
+                    display: flex;
+                    background-color: red;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 5px;
+                    padding: 5px 10px 5px 10px;
+                    border-radius: 5px;
+                    text-transform: uppercase;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    font-size: 0.65rem;
+                    font-weight: 700;
+                }
+            }
+        }
+        .loginContenedor{
+            @include dimensiones(90vw, fit-content);
+            padding-top: 5px;
+            padding-bottom: 5px;
+            .loginForm{
+                display: grid;
+                grid-template-columns: 1;
+                grid-template-rows: 3;
+                grid-template-areas: "loginUser" "loginPass" "loginAction";
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 0.65rem;
+                font-weight: 500;
+                text-transform: uppercase;
+                width: 90vw;
+                height: fit-content;
+                .loginUser{
+                    grid-area: loginUser;
+                    @include flex-column-align-center;
+                }
+                .loginPass{
+                    grid-area: loginPass;
+                    @include flex-column-align-center;
+                }
+                .loginAction{
+                    grid-area: loginAction;
+                    @include flex-column-align-center;
+                    .loginBoton{
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        padding: 3px 10px 3px 10px;
+                        margin-top: 5px;
+                    }
+                }
+                .loginLabel{
+                    text-align: center;
+                    @include flex-justify-center;
+                    margin-bottom: 5px;
+                }
+                .loginCaja{
+                    text-align: center;
+                    @include flex-justify-center;
+                    margin-bottom: 5px;
+                    width: 250px;
+                    height: 30px;
+                    border-radius: 5px;
+                }
+                .claveReset{
+                    color: whitesmoke;
+                    text-decoration: none;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+    .contenedorBlanco{
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $color-blanco1;
+        height: fit-content;
+        width: 100vw;
+        .videosContenedor{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: fit-content;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            .videosAnteriores{
+                color: nth($list: $paleta-principal, $n: 3);
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                height: fit-content;
+                width: 90vw;
+                .videoGaleria{
+                    display: grid;
+                    grid-template-columns: 1;
+                    grid-template-rows: auto;
+                    grid-template-areas: "videoMini1" "videoMini2" "videoMini3" "videoMini4" "videoMini5";
+                    justify-content: center;
+                    align-items: center;
+                    height: fit-content;
+                }
+            }
+        }
+        .reglamento{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 0.65rem;
+            font-weight: 500;
+            width: 90vw;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .contactoContenedor{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 90vw;
+            height: fit-content;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            .contactoForm{
+                display: grid;
+                grid-template-columns: 1;
+                grid-template-rows: 6;
+                grid-template-areas: "contactoNombre" "contactoApellido" "contactoEmail" "contactoEmail" "contactoPais" "contactoComentario" "contactoAction";
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-weight: 500;
+                font-size: 0.65rem;
+                text-transform: uppercase;
+                width: 90vw;
+                .contactoNombre{
+                    grid-area: contactoNombre;
+                    @include flex-column-align-center;
+                    margin-bottom: 5px;
+                }
+                .contactoApellido{
+                    grid-area: contactoApellido;
+                    @include flex-column-align-center;
+                    margin-bottom: 5px;
+                }
+                .contactoEmail{
+                    grid-area: contactoEmail;
+                    @include flex-column-align-center;
+                    margin-bottom: 5px;
+                }
+                .contactoPais{
+                    grid-area: contactoPais;
+                    @include flex-column-align-center;
+                    margin-bottom: 5px;
+                }
+                .contactoComentario{
+                    grid-area: contactoComentario;
+                    @include flex-column-align-center;
+                    margin-bottom: 5px;
+                }
+                .contactoAction{
+                    grid-area: contactoAction;
+                    @include flex-column-align-center;
+                    .contactoBoton{
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        padding: 3px 10px 3px 10px;
+                        margin-top: 5px;
+                    }
+                }
+                .contactoLabel{
+                    margin-bottom: 5px;
+                }
+                .contactoCaja{
+                    text-align: center;
+                    width: 250px;
+                    height: 30px;
+                    border-radius: 5px;
+                }
+                .comentarioCaja{
+                    text-align: center;
+                    width: 250px;
+                    height: 250px;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width:576px){
+    main{
+        .tituloPagina{
+            font-size: 1.5rem;
+        }
+        .menuBkg{
+            @include flex-justify-center;
+            @include dimensiones(100vw, fit-content);
+            background-color: nth($list: $paleta-principal, $n: 2);
+            position: sticky;
+            top: 0px;
+            .menuContenedor{
+                @include dimensiones(90vw,40px);
+                @include flex-space-between;
+                .menuLogo{
+                    display: none;
+                }
+                .menuElement{
+                    font-size: 0.75rem;
+                    font-weight: 600;
+                    margin-right: 5px;
+                }
+                .menuLogin{
+                    font-size: 0.75rem;
+                    font-weight: 600;
+                }
+            }
+        }
+        .bienvenidaContenedor{
+            height: 200px;
+            padding: 10px;
+            .tituloBienvenida{
+                font-size: 2rem;
+                margin-bottom: 10px;
+            }
+            .subtituloBienvenida{
+                font-size: 1rem;
+                font-weight: 500;
+                margin-bottom: 10px;
+            }
+            .textoBienvenida{
+                font-size: 0.65rem;
+                width: 520px;
+            }
+            .racenowLogo{
+                width: 400px;
+            }
+            .byafrt{
+                width: 400px;
+                font-size: 1rem;
+            }
+        }
+        .contenedorRojo{
+            @include dimensiones(100vw,100px);
+        }
+        .contenedorGris{
+            .eventosContenedor{
+                .eventoLadoIzq{
+                    .eventoTitulo{
+                        font-size: 0.85rem;
+                    }
+                    .eventoSubtitulo{
+                        font-size: 0.65rem;
+                    }
+                    .eventoLI{
+                        font-size: 0.65rem;
+                        margin-bottom: 2px;
+                    }
+                }
+                .eventoLadoDer{
+                    .eventoInfo{
+                        font-size: 0.65rem;
+                        padding: 6px 12px 6px 12px;
+                    }
+                }
+            }
+        }
+        .contenedorBlanco{
+            .videoGaleria{
+                grid-template-columns: 2;
+                grid-template-rows: 3;
+                grid-template-areas: "videoMini1 videoMini2" "videoMini3 videoMini4" "videoMini5 videoMini5";
+            }
+        }
+    }
+}
+@media screen and (min-width:1000px) {
+    main{
+        .horzLine1{
+            margin-bottom: 20px;
+        }
+        .horzLine2{
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        .tituloPagina{
+            font-size: 2rem;
+        }
+        .tituloSeccion{
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+        .menuBkg{
+            position: sticky;
+            top: 0px;
+            .menuContenedor{
+                @include dimensiones(1000px,76px);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .menuLogo{
+                    display: flex;
+                    justify-content: flex-start;
+                    margin-right: 5px;
+                    height: 60px;
+                }
+                .menuElement{
+                    font-size: 1rem;
+                    font-weight: 600;
+                    margin: 5px;
+                }
+                .menuLogin{
+                    font-size: 1rem;
+                    font-weight: 600;
+                    margin-left: 80px;
+                }
+            }
+        }
+        .bienvenidaContenedor{
+            height: 300px;
+            padding: 50px;
+            .tituloBienvenida{
+                font-size: 2.5rem;
+                margin-bottom: 30px;
+            }
+            .subtituloBienvenida{
+                font-size: 1.5rem;
+                font-weight: 500;
+                margin-bottom: 30px;
+            }
+            .textoBienvenida{
+                font-size: 0.75rem;
+                width: 600px;
+            }
+            .racenowLogo{
+                width: 600px;
+            }
+            .byafrt{
+                width: 600px;
+                font-size: 1.5rem;
+            }
+        }
+        .discordContenedor{
+            @include dimensiones(100vw,fit-content);
+            @include flex-justify-center;
+            padding: 30px;
+            .discord{
+                @include flex-justify-align-center;
+                width: 1000px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                .discordTitulo{
+                    display: flex;
+                    color: nth($list: $paleta-principal, $n: 7);
+                    font-size: 2rem;
+                    font-weight: 600;
+                    font-style: oblique;
+                    margin-right: 100px;
+                }
+                .discordBoton{
+                    @include dimensiones(250px,80px);
+                    @include flex-justify-align-center;
+                    background-color: nth($list: $paleta-principal, $n: 7);
+                    border-radius: 20px;
+                    padding: 10px;
+                    .discordLogo{
+                        @include dimensiones(80px,80px);
+                        @include flex-justify-align-center
+                    }
+                    .discordTextos{
+                        @include dimensiones(170px,80px);
+                        @include flex-column-justify-align-center;
+                        color: nth($list: $paleta-principal, $n: 2);
+                        .texto1{
+                            text-transform: uppercase;
+                            font-size: 1rem;
+                        }
+                        .texto2{
+                            font-size: 2rem;
+                            font-style: oblique;
+                        }
+                    }
+                }
+                .discordBoton:hover{
+                    transition: $transition-duration1;
+                    transform: scale($hover-tranformation-scale);
+                }
+            }
+        }
+        .contenedorRojo{
+            @include dimensiones(100vw,150px);
+        }
+        .contenedorGris{
+            .eventosContenedor{
+                grid-template-columns: 2;
+                grid-template-rows: 1;
+                grid-template-areas: "eventosActivos eventosFinalizados";
+                justify-content: center;
+                align-items: center;
+                width: 1000px;
+                height: fit-content;
+                gap: 40px;
+                .eventosActivos{
+                    width: 480px;
+                    .evento{
+                        width: 100%;
+                        padding: 10px;
+                        margin-bottom: 20px;
+                    }
+                    .racenow{
+                        width: 100%;
+                        padding: 10px;
+                        margin-bottom: 20px;
+                    }
+                }
+                .eventosFinalizados{
+                    width: 480px;
+                    .evento{
+                        width: 100%;
+                        padding: 10px;
+                        margin-bottom: 20px;
+                    }
+                    .racenow{
+                        width: 100%;
+                        padding: 10px;
+                        margin-bottom: 20px;
+                    }
+                }
+                .racenowActivos{
+                    width: 1000px;
+                    .racenow{
+                        width: 100%;
+                        padding: 10px;
+                        margin-bottom: 20px;
+                    }
+                }
+                .eventoLadoIzq{
+                    .eventoTitulo{
+                        font-size: 1rem;
+                    }
+                    .eventoSubtitulo{
+                        font-size: 0.75rem;
+                        margin-bottom: 10px;
+                    }
+                    .eventoLI{
+                        font-size: 0.75rem;
+                    }
+                }
+                .eventoLadoDer{
+                    .eventoInfo{
+                        font-size: 0.75rem;
+                        padding: 5px 10px 5px 10px;
+                    }
+                }
+            }
+            .contenedorLive{
+                color: whitesmoke;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100vw;
+                height: fit-content;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                .divMainStream{
+                    display: flex;
+                    flex-flow: column;
+                    justify-content: flex-end;
+                    color: whitesmoke;
+                    height: fit-content;
+                    width: 1000px;
+                    .iframeContenedor{
+                        @include dimensiones(1000px,562px);
+                    }
+                }
+                .suscribirContenedor{
+                    display: flex;
+                    justify-content: flex-end;
+                    width: 1000px;
+                    .suscribirBoton{
+                        display: flex;
+                        background-color: red;
+                        justify-content: center;
+                        align-items: center;
+                        margin-top: 5px;
+                        padding: 10px 15px 10px 15px;
+                        border-radius: 5px;
+                        text-transform: uppercase;
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        font-size: 1rem;
+                        font-weight: 700;
+                    }
+                }
+            }
+            .loginContenedor{
+                @include dimensiones(1000px, fit-content);
+                padding-top: 20px;
+                padding-bottom: 20px;
+                .loginForm{
+                    display: grid;
+                    grid-template-columns: 2;
+                    grid-template-rows: 2;
+                    grid-template-areas: "loginUser loginPass" "loginAction loginAction";
+                    font-size: 1rem;
+                    width: 1000px;
+                    height: fit-content;
+                    .loginUser{
+                        grid-area: loginUser;
+                    }
+                    .loginPass{
+                        grid-area: loginPass;
+                    }
+                    .loginAction{
+                        grid-area: loginAction;
+                        .loginBoton{
+                            padding: 6px 20px 6px 20px;
+                            margin-top: 10px;
+                        }
+                    }
+                    .loginLabel{
+                        text-align: center;
+                        margin-bottom: 10px;
+                    }
+                    .loginCaja{
+                        @include dimensiones(250px,30px);
+                        text-align: center;
+                        margin-bottom: 10px;
+                        border-radius: 5px;
+                    }
+                    .claveReset{
+                        color: whitesmoke;
+                        text-decoration: none;
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+        .contenedorBlanco{
+            .videosContenedor{
+                width: 1000px;
+                .videosAnteriores{
+                    width: 1000px;
+                    .videoGaleria{
+                        grid-template-columns: 5;
+                        grid-template-rows: 1;
+                        grid-template-areas: "videoMini1 videoMini2 videoMini3 videoMini4 videoMini5 videoMini5";
+                        justify-content: space-between;
+                        width: 1000px;
+                    }
+                }
+            }
+            .reglamento{
+                @include dimensiones(1000px,fit-content);
+                font-size: 1rem;
+            }
+            .contactoContenedor{
+                @include dimensiones(1000px, fit-content);
+                padding-top: 20px;
+                padding-bottom: 20px;
+                .contactoForm{
+                    grid-template-columns: 2;
+                    grid-template-rows: 5;
+                    grid-template-areas: "contactoNombre contactoComentario" "contactoApellido contactoComentario" "contactoEmail contactoComentario" "contactoPais contactoComentario" "contactoAction contactoAction";
+                    justify-content: space-between;
+                    font-size: 1rem;
+                    width: 1000px;
+                    .contactoNombre{
+                        margin-bottom: 10px;
+                        margin-left: 100px;
+                    }
+                    .contactoApellido{
+                        margin-bottom: 10px;
+                        margin-left: 100px;
+                    }
+                    .contactoEmail{
+                        margin-bottom: 10px;
+                        margin-left: 100px;
+                    }
+                    .contactoPais{
+                        margin-bottom: 10px;
+                        margin-left: 100px;
+                    }
+                    .contactoComentario{
+                        margin-bottom: 10px;
+                        margin-right: 100px;
+                    }
+                    .contactoLabel{
+                        margin-bottom: 10px;
+                    }
+                    .contactoAction{
+                        .contactoBoton{
+                            padding: 6px 20px 6px 20px;
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,72 @@
+header{
+    .menuBkg{
+        @include flex-justify-align-center;
+        @include dimensiones(100vw,fit-content);
+        background-color: nth($list: $paleta-principal, $n: 3);
+        .menuContenedor{
+            @include flex-space-between;
+            @include dimensiones(90vw,25px);
+            .menuLogo{
+                @include flex-flex-start;
+                height: 20px;
+            }
+            .menuLinks{
+                display: flex;
+                .menuElement{
+                    @include dimensiones(20px,20px);
+                    @include flex-justify-align-center;
+                    background-color: nth($list: $paleta-principal, $n: 4);
+                    border-radius: 20px;
+                    margin-left: 5px;
+                    padding: 5px;
+                }
+                .menuElement:hover{
+                    transition: $transition-duration0;
+                    transform: scale($hover-tranformation-scale);
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width:576px){
+    header{
+        .menuBkg{
+            .menuContenedor{
+                @include dimensiones(90vw,35px);
+                .menuLogo{
+                    @include flex-flex-start;
+                    height: 25px;
+                }
+                .menuLinks{
+                    display: flex;
+                    .menuElement{
+                        @include dimensiones(25px,25px);
+                        border-radius: 25px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width:1000px) {
+    header{
+        .menuBkg{
+            @include dimensiones(100vw,fit-content);
+            .menuContenedor{
+                @include dimensiones(1000px,40px);
+                .menuLogo{
+                    display: none;
+                }
+                .menuLinks{
+                    display: flex;
+                    .menuElement{
+                        @include dimensiones(25px,25px);
+                        border-radius: 25px;
+                        margin-left: 5px;
+                        padding: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
