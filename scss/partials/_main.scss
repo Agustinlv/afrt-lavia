@@ -655,33 +655,36 @@ main{
                     font-style: oblique;
                     margin-right: 100px;
                 }
-                .discordBoton{
-                    @include dimensiones(250px,80px);
-                    @include flex-justify-align-center;
-                    background-color: nth($list: $paleta-principal, $n: 7);
-                    border-radius: 20px;
-                    padding: 10px;
-                    .discordLogo{
-                        @include dimensiones(80px,80px);
-                        @include flex-justify-align-center
-                    }
-                    .discordTextos{
-                        @include dimensiones(170px,80px);
-                        @include flex-column-justify-align-center;
-                        color: nth($list: $paleta-principal, $n: 2);
-                        .texto1{
-                            text-transform: uppercase;
-                            font-size: 1rem;
+                .discorLink{
+                    text-decoration: none;
+                    .discordBoton{
+                        @include dimensiones(250px,80px);
+                        @include flex-justify-align-center;
+                        background-color: nth($list: $paleta-principal, $n: 7);
+                        border-radius: 20px;
+                        padding: 10px;
+                        .discordLogo{
+                            @include dimensiones(80px,80px);
+                            @include flex-justify-align-center
                         }
-                        .texto2{
-                            font-size: 2rem;
-                            font-style: oblique;
+                        .discordTextos{
+                            @include dimensiones(170px,80px);
+                            @include flex-column-justify-align-center;
+                            color: nth($list: $paleta-principal, $n: 2);
+                            .texto1{
+                                text-transform: uppercase;
+                                font-size: 1rem;
+                            }
+                            .texto2{
+                                font-size: 2rem;
+                                font-style: oblique;
+                            }
                         }
                     }
-                }
-                .discordBoton:hover{
-                    transition: $transition-duration1;
-                    transform: scale($hover-tranformation-scale);
+                    .discordBoton:hover{
+                        transition: $transition-duration1;
+                        transform: scale($hover-tranformation-scale);
+                    }
                 }
             }
         }

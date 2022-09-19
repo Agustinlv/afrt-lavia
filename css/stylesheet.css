@@ -649,38 +649,40 @@ main {
         font-weight: 600;
         font-style: oblique;
         margin-right: 100px; }
-      main .discordContenedor .discord .discordBoton {
-        width: 250px;
-        height: 80px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: white;
-        border-radius: 20px;
-        padding: 10px; }
-        main .discordContenedor .discord .discordBoton .discordLogo {
-          width: 80px;
+      main .discordContenedor .discord .discorLink {
+        text-decoration: none; }
+        main .discordContenedor .discord .discorLink .discordBoton {
+          width: 250px;
           height: 80px;
           display: flex;
-          justify-content: center;
-          align-items: center; }
-        main .discordContenedor .discord .discordBoton .discordTextos {
-          width: 170px;
-          height: 80px;
-          display: flex;
-          flex-direction: column;
           justify-content: center;
           align-items: center;
-          color: #282828; }
-          main .discordContenedor .discord .discordBoton .discordTextos .texto1 {
-            text-transform: uppercase;
-            font-size: 1rem; }
-          main .discordContenedor .discord .discordBoton .discordTextos .texto2 {
-            font-size: 2rem;
-            font-style: oblique; }
-      main .discordContenedor .discord .discordBoton:hover {
-        transition: 1s;
-        transform: scale(110%); }
+          background-color: white;
+          border-radius: 20px;
+          padding: 10px; }
+          main .discordContenedor .discord .discorLink .discordBoton .discordLogo {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+          main .discordContenedor .discord .discorLink .discordBoton .discordTextos {
+            width: 170px;
+            height: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #282828; }
+            main .discordContenedor .discord .discorLink .discordBoton .discordTextos .texto1 {
+              text-transform: uppercase;
+              font-size: 1rem; }
+            main .discordContenedor .discord .discorLink .discordBoton .discordTextos .texto2 {
+              font-size: 2rem;
+              font-style: oblique; }
+        main .discordContenedor .discord .discorLink .discordBoton:hover {
+          transition: 1s;
+          transform: scale(110%); }
   main .contenedorRojo {
     width: 100vw;
     height: 150px; }
